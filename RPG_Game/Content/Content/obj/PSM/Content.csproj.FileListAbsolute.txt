@@ -1,7 +1,0 @@
-F:\softuni\OOP\RPG_Game\Content\Content\bin\PSM\Content\Background.xnb
-F:\softuni\OOP\RPG_Game\Content\Content\bin\PSM\IgnoreMe.dll
-F:\softuni\OOP\RPG_Game\Content\Content\obj\PSM\Content.csprojResolveAssemblyReference.cache
-F:\softuni\OOP\RPG_Game\Content\Content\obj\PSM\Microsoft.Xna.Framework.RuntimeProfile.txt
-F:\softuni\OOP\RPG_Game\Content\Content\obj\PSM\IgnoreMe.dll
-F:\softuni\OOP\RPG_Game\Content\Content\bin\PSM\Content\Player.xnb
-F:\softuni\OOP\RPG_Game\Content\Content\bin\PSM\Content\Enemy.xnb

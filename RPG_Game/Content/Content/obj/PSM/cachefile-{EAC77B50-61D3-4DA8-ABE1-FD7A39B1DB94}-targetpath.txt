@@ -1,3 +1,0 @@
-Content\Background.xnb
-Content\Player.xnb
-Content\Enemy.xnb
