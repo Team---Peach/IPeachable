@@ -18,10 +18,16 @@ namespace RPG_Game
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        //private Background background;
         private IActor player;
-        //private Enemy enemy;
         private IMap map;
+
+        // The previous (old) and the current (new)
+        // keyboard states to check for key presses
+        private KeyboardState
+            oldKBState,
+            newKBState;
+
+        private static Random RNG;
 
         public GameMain()
             : base()
@@ -37,34 +43,29 @@ namespace RPG_Game
             graphics.PreferredBackBufferHeight = SCREEN_HEIGHT;
             graphics.ApplyChanges();
 
+            this.oldKBState = new KeyboardState();
+            RNG = new Random();
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            /* *
-            Texture2D backgroundTexture = Content.Load<Texture2D>("Background");
-            background = new Background(backgroundTexture);
-            Texture2D playerTexture = Content.Load<Texture2D>("Player");
-            player = new Player(playerTexture);
-            Texture2D enemyTexture = Content.Load<Texture2D>("Enemy");
-            enemy = new Enemy(enemyTexture);
-            * */
 
             Texture2D mapFloor = Content.Load<Texture2D>("pebble_brown0");
+            Texture2D mapWall = Content.Load<Texture2D>("brick_brown0");
             Texture2D playerTexture = Content.Load<Texture2D>("human_m");
 
             Point visibleTiles = new Point(
-                SCREEN_HEIGHT / Map.TILE_SIZE,
-                SCREEN_WIDTH / Map.TILE_SIZE);
+                (SCREEN_HEIGHT-10) / Map.TILE_SIZE,
+                (SCREEN_WIDTH-10) / Map.TILE_SIZE);
 
             this.map = new Map(
-                GenerateMap(40, 40, mapFloor),
+                GenerateMap(40, 40, mapFloor, mapWall),
                 visibleTiles);
 
-            this.player = new Unit(playerTexture, this.map, Point.Zero, Flags.IsPlayerControl);
-            this.player.Spawn();
+            this.player = new Unit(playerTexture, Flags.IsPlayerControl, this.map, Point.Zero);
         }
 
         protected override void UnloadContent()
@@ -72,11 +73,58 @@ namespace RPG_Game
 
         protected override void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            // Get the current keyboard state.
+            this.newKBState = Keyboard.GetState();
+
+            if (CheckKeys(Keys.Escape))
+            {
                 Exit();
-            /* *
-            player.Move();
-            * */
+            }
+
+            // Horizonta/Vertical movement
+            if (CheckKeys(Keys.Down, Keys.NumPad2))
+            {
+                this.player.Move(CardinalDirection.South);
+            }
+
+            if (CheckKeys(Keys.Up, Keys.NumPad8))
+            {
+                this.player.Move(CardinalDirection.North);
+            }
+
+            if (CheckKeys(Keys.Left, Keys.NumPad4))
+            {
+                this.player.Move(CardinalDirection.West);
+            }
+
+            if (CheckKeys(Keys.Right, Keys.NumPad6))
+            {
+                this.player.Move(CardinalDirection.East);
+            }
+
+            //Diagonal movement
+            if (CheckKeys(Keys.NumPad7))
+            {
+                this.player.Move(CardinalDirection.NorthWest);
+            }
+
+            if (CheckKeys(Keys.NumPad9))
+            {
+                this.player.Move(CardinalDirection.NorthEast);
+            }
+
+            if (CheckKeys(Keys.NumPad1))
+            {
+                this.player.Move(CardinalDirection.SouthWest);
+            }
+
+            if (CheckKeys(Keys.NumPad3))
+            {
+                this.player.Move(CardinalDirection.SouthEast);
+            }
+
+            // Set the old keyboard state
+            this.oldKBState = this.newKBState;
 
             base.Update(gameTime);
         }
@@ -87,16 +135,10 @@ namespace RPG_Game
 
             this.map.Draw(spriteBatch, player.Position);
 
-            /* *
-            background.Draw(spriteBatch);
-            player.Draw(spriteBatch);
-            enemy.Draw(spriteBatch);
-            * */
-
             base.Draw(gameTime);
         }
 
-        public ITile[,] GenerateMap(int height, int width, Texture2D texture)
+        private ITile[,] GenerateMap(int height, int width, Texture2D texture, Texture2D blockedTexture)
         {
             Tile[,] resultTiles = new Tile[height, width];
 
@@ -104,12 +146,39 @@ namespace RPG_Game
             {
                 for (int j = 0; j < width; j++)
                 {
-                    Terrain sampleTerrain = new Terrain(texture, Flags.None);
+                    int next = RNG.Next(0, 10);
+                    Terrain sampleTerrain;
+
+                    if (next < 8)
+                    {
+                        sampleTerrain = new Terrain(texture, Flags.None);
+                    }
+                    else
+                    {
+                        sampleTerrain = new Terrain(blockedTexture, Flags.IsBlocked);
+                    }
+
                     resultTiles[i, j] = new Tile(sampleTerrain);
                 }
             }
+            // Make starting tile free, for player spawn
+            resultTiles[0, 0] = new Tile(new Terrain(texture, Flags.None));
 
             return resultTiles;
+        }
+
+        private bool CheckKeys(params Keys[] keysDown)
+        {
+            bool result = false;
+
+            foreach (var key in keysDown)
+            {
+                if (this.oldKBState.IsKeyUp(key) &&
+                    this.newKBState.IsKeyDown(key))
+                    result = true;
+            }
+
+            return result;
         }
     }
 }

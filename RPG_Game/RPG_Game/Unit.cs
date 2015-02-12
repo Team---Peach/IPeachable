@@ -14,15 +14,20 @@ namespace RPG_Game
         private Point position;
         private Flags flags;
         private IMap map;
-              
-        public Unit(Texture2D texture, IMap map, Point position, Flags flags)
+
+        public Unit(Texture2D texture, Flags flags)
         {
             this.texture = texture;
-            this.map = map;
-            this.Position = position;
             this.Flags = flags;
         }
 
+        public Unit(Texture2D texture, Flags flags, IMap map, Point position)
+            : this(texture, flags)
+        {
+            Spawn(map, position);
+        }
+
+        #region Properties
         public Point Position
         {
             get { return this.position; }
@@ -38,15 +43,10 @@ namespace RPG_Game
         public Texture2D Texture
         {
             get { return this.texture; }
+
         }
-        /* *
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(this.Texture, new Vector2(this.x, this.y), Color.White);
-            spriteBatch.End();            
-        }
-        * */
+        #endregion
+
         public bool Move(CardinalDirection dir)
         {
             #region Delta Coordinates
@@ -94,34 +94,17 @@ namespace RPG_Game
 
             return 
                 this.map.MoveUnit(this, this.position + delta);
-
-            /* *
-            KeyboardState newState = Keyboard.GetState();
-
-            if (newState.IsKeyDown(Keys.Up))
-            {
-                this.y--;
-            }
-            if (newState.IsKeyDown(Keys.Down))
-            {
-                this.y++;
-            }
-            if (newState.IsKeyDown(Keys.Right))
-            {
-                this.x++;
-            }
-            if (newState.IsKeyDown(Keys.Left))
-            {
-                this.x--;
-            }
-             * */
         }
 
-        public bool Spawn()
+        public bool Spawn(IMap map, Point position)
         {
-            if (this.map.CheckTile(this.position)) 
+            if (map.CheckTile(position))
             {
-                this.map.Tiles[this.position.X, this.position.Y].Actor = this;
+                map.Tiles[position.X, position.Y].Actor = this;
+
+                this.map = map;
+                this.Position = position;
+
                 return true;
             }
 

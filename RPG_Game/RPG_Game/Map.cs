@@ -8,10 +8,12 @@ namespace RPG_Game
         public const int TILE_SIZE = 32;
 
         private ITile[,] tiles;
+        private Point mapBoxTiles;
+        /* *
         private Point 
             topLeft,
             bottomRight;
-        private Point mapBoxTiles;
+         * */
 
         public Map(ITile[,] tiles, Point mapBoxTiles)
         {
@@ -89,18 +91,18 @@ namespace RPG_Game
                     Point draw = new Point(startTile.X + x, startTile.Y + y);
 
                     spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Terrain.Texture, position);
-                    
-                    if (this.Tiles[x, y].GameObject != null)
+
+                    if (this.Tiles[draw.X, draw.Y].GameObject != null)
                     {
                         spriteBatch.Draw(this.Tiles[draw.X, draw.Y].GameObject.Texture, position);
                     }
 
-                    if (this.Tiles[x, y].Item != null)
+                    if (this.Tiles[draw.X, draw.Y].Item != null)
                     {
                         spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Item.Texture, position);
                     }
 
-                    if (this.Tiles[x, y].Actor != null)
+                    if (this.Tiles[draw.X, draw.Y].Actor != null)
                     {
                         spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Actor.Texture, position);
                     }
@@ -112,6 +114,14 @@ namespace RPG_Game
 
         public bool CheckTile(Point p)
         {
+            // Return false if the point is out of bounds
+            if (p.X < 0 || p.X >= this.Height ||
+                p.Y < 0 || p.Y >= this.Width)
+            {
+                return false;
+            }
+
+            // Return False if the point is blocked
             if (this.Tiles[p.X, p.Y].Terrain.Flags.HasFlag(Flags.IsBlocked))
             {
                 return false;

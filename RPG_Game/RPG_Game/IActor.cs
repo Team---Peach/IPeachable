@@ -9,6 +9,6 @@ namespace RPG_Game
         Texture2D Texture { get; }
 
         bool Move(CardinalDirection dir);
-        bool Spawn();
+        bool Spawn(IMap map, Point position);
     }
 }
