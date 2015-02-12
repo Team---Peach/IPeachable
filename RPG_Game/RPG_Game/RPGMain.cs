@@ -10,7 +10,7 @@ namespace RPG_Game
     /// <summary>
     /// The main class.
     /// </summary>
-    public static class Program
+    public static class RPGMain
     {
         /// <summary>
         /// The main entry point for the application.

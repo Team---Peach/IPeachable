@@ -100,7 +100,7 @@ namespace RPG_Game
         {
             if (map.CheckTile(position))
             {
-                map.Tiles[position.X, position.Y].Actor = this;
+                map[position].Actor = this;
 
                 this.map = map;
                 this.Position = position;

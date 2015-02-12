@@ -9,11 +9,6 @@ namespace RPG_Game
 
         private ITile[,] tiles;
         private Point mapBoxTiles;
-        /* *
-        private Point 
-            topLeft,
-            bottomRight;
-         * */
 
         public Map(ITile[,] tiles, Point mapBoxTiles)
         {
@@ -21,10 +16,17 @@ namespace RPG_Game
             this.mapBoxTiles = mapBoxTiles;
         }
 
+        #region Properties
         public ITile[,] Tiles
         {
             get { return this.tiles; }
             set { this.tiles = value; }
+        }
+
+        public ITile this[Point index]
+        {
+            get { return this.Tiles[index.X, index.Y]; }
+            set { this.Tiles[index.X, index.Y] = value; }
         }
 
         public int Height
@@ -36,21 +38,20 @@ namespace RPG_Game
         {
             get { return this.Tiles.GetLength(1); }
         }
-        
+        #endregion
+
         public bool MoveUnit(IActor actor, Point newLocation)
         {
             if (CheckTile(newLocation))
             {
-                this.Tiles[actor.Position.X, actor.Position.Y].Actor = null;
+                this[actor.Position].Actor = null;
                 actor.Position = newLocation;
-                this.Tiles[newLocation.X, newLocation.Y].Actor = actor;
+                this[newLocation].Actor = actor;
 
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         public void Draw(SpriteBatch spriteBatch, Point center) 
@@ -87,24 +88,24 @@ namespace RPG_Game
             {
                 for (int y = 0; y < this.mapBoxTiles.Y; y++)
                 {
-                    Vector2 position = new Vector2(10 + TILE_SIZE * y, 10 + TILE_SIZE * x);
-                    Point draw = new Point(startTile.X + x, startTile.Y + y);
+                    Vector2 drawPosition = new Vector2(10 + TILE_SIZE * y, 10 + TILE_SIZE * x);
+                    Point tile = new Point(startTile.X + x, startTile.Y + y);
 
-                    spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Terrain.Texture, position);
+                    spriteBatch.Draw(this[tile].Terrain.Texture, drawPosition);
 
-                    if (this.Tiles[draw.X, draw.Y].GameObject != null)
+                    if (this[tile].GameObject != null)
                     {
-                        spriteBatch.Draw(this.Tiles[draw.X, draw.Y].GameObject.Texture, position);
+                        spriteBatch.Draw(this[tile].GameObject.Texture, drawPosition);
                     }
 
-                    if (this.Tiles[draw.X, draw.Y].Item != null)
+                    if (this[tile].Item != null)
                     {
-                        spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Item.Texture, position);
+                        spriteBatch.Draw(this[tile].Item.Texture, drawPosition);
                     }
 
-                    if (this.Tiles[draw.X, draw.Y].Actor != null)
+                    if (this[tile].Actor != null)
                     {
-                        spriteBatch.Draw(this.Tiles[draw.X, draw.Y].Actor.Texture, position);
+                        spriteBatch.Draw(this[tile].Actor.Texture, drawPosition);
                     }
                 }
             }
@@ -112,17 +113,17 @@ namespace RPG_Game
             spriteBatch.End();
         }
 
-        public bool CheckTile(Point p)
+        public bool CheckTile(Point point)
         {
             // Return false if the point is out of bounds
-            if (p.X < 0 || p.X >= this.Height ||
-                p.Y < 0 || p.Y >= this.Width)
+            if (point.X < 0 || point.X >= this.Height ||
+                point.Y < 0 || point.Y >= this.Width)
             {
                 return false;
             }
 
             // Return False if the point is blocked
-            if (this.Tiles[p.X, p.Y].Terrain.Flags.HasFlag(Flags.IsBlocked))
+            if (this[point].Terrain.Flags.HasFlag(Flags.IsBlocked))
             {
                 return false;
             }

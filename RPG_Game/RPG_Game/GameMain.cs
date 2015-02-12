@@ -27,8 +27,6 @@ namespace RPG_Game
             oldKBState,
             newKBState;
 
-        private static Random RNG;
-
         public GameMain()
             : base()
         {
@@ -44,7 +42,6 @@ namespace RPG_Game
             graphics.ApplyChanges();
 
             this.oldKBState = new KeyboardState();
-            RNG = new Random();
 
             base.Initialize();
         }
@@ -58,13 +55,14 @@ namespace RPG_Game
             Texture2D playerTexture = Content.Load<Texture2D>("human_m");
 
             Point visibleTiles = new Point(
-                (SCREEN_HEIGHT-10) / Map.TILE_SIZE,
-                (SCREEN_WIDTH-10) / Map.TILE_SIZE);
+                (SCREEN_HEIGHT - 10) / Map.TILE_SIZE,
+                (SCREEN_WIDTH - 10) / Map.TILE_SIZE);
 
             this.map = new Map(
-                GenerateMap(40, 40, mapFloor, mapWall),
+                Tools.GenerateMap(40, 40, mapFloor, mapWall),
                 visibleTiles);
 
+            // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
             this.player = new Unit(playerTexture, Flags.IsPlayerControl, this.map, Point.Zero);
         }
 
@@ -81,6 +79,7 @@ namespace RPG_Game
                 Exit();
             }
 
+            #region Keys Check
             // Horizonta/Vertical movement
             if (CheckKeys(Keys.Down, Keys.NumPad2))
             {
@@ -122,6 +121,7 @@ namespace RPG_Game
             {
                 this.player.Move(CardinalDirection.SouthEast);
             }
+            #endregion
 
             // Set the old keyboard state
             this.oldKBState = this.newKBState;
@@ -136,35 +136,6 @@ namespace RPG_Game
             this.map.Draw(spriteBatch, player.Position);
 
             base.Draw(gameTime);
-        }
-
-        private ITile[,] GenerateMap(int height, int width, Texture2D texture, Texture2D blockedTexture)
-        {
-            Tile[,] resultTiles = new Tile[height, width];
-
-            for (int i = 0; i < height; i++)
-            {
-                for (int j = 0; j < width; j++)
-                {
-                    int next = RNG.Next(0, 10);
-                    Terrain sampleTerrain;
-
-                    if (next < 8)
-                    {
-                        sampleTerrain = new Terrain(texture, Flags.None);
-                    }
-                    else
-                    {
-                        sampleTerrain = new Terrain(blockedTexture, Flags.IsBlocked);
-                    }
-
-                    resultTiles[i, j] = new Tile(sampleTerrain);
-                }
-            }
-            // Make starting tile free, for player spawn
-            resultTiles[0, 0] = new Tile(new Terrain(texture, Flags.None));
-
-            return resultTiles;
         }
 
         private bool CheckKeys(params Keys[] keysDown)
