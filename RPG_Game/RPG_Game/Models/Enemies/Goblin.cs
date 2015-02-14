@@ -1,4 +1,4 @@
-﻿namespace RPG_Game.Models
+﻿namespace RPG_Game.Models.Enemies
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,8 +13,8 @@
         private const int GoblinAttack = 5;
         private const int GoblinDefence = 10;
 
-        public Goblin(Texture2D texture, Flags flags, IMap map, Point position)
-            : base(texture, flags, map, position, GoblinName, GoblinHealth, GoblinMana, GoblinAttack, GoblinDefence)
+        public Goblin(Texture2D texture, IMap map, Point position)
+            : base(texture, map, position, GoblinName, GoblinHealth, GoblinMana, GoblinAttack, GoblinDefence)
         {
 
         }

@@ -7,8 +7,8 @@
 
     public class GameItem : GameObject, IGameItem
     {
-        public GameItem(Texture2D texture, Flags flags, IMap map, Point position, string name) 
-            : base(texture, flags, map, position, name)
+        public GameItem(Texture2D texture, IMap map, Point position, string name) 
+            : base(texture, Flags.IsItem, map, position, name)
         {
         }
     }

@@ -23,7 +23,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Terrain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="9.25" Y="0.5" Width="1.5" />
+    <Position X="5.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAQ=</HashCode>
       <FileName>Models\Terrain.cs</FileName>
@@ -31,7 +31,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Tile" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="11" Y="0.5" Width="1.5" />
+    <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Models\Tile.cs</FileName>
@@ -41,12 +41,12 @@
   <Class Name="RPG_Game.Models.Tools" Collapsed="true">
     <Position X="7.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAIAAAAAAAAAAAAAAAAAIAAAQAAAAAAAABQAAAA=</HashCode>
       <FileName>Models\Tools.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Player" BaseTypeListCollapsed="true">
-    <Position X="8.5" Y="9" Width="1.5" />
+    <Position X="6.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAYAAIAAAAgAgAAAAIBAJAAASAACAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
@@ -54,7 +54,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameObject">
-    <Position X="10.5" Y="2.5" Width="1.5" />
+    <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAFAAAABAAAAAgAAEAIAQAAAAEAgAAAAIAAAAAAAQ=</HashCode>
       <FileName>Models\GameObject.cs</FileName>
@@ -62,7 +62,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameUnit">
-    <Position X="8.5" Y="6" Width="1.5" />
+    <Position X="10" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAIgAAAAA=</HashCode>
       <FileName>Models\GameUnit.cs</FileName>
@@ -70,15 +70,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Enemy">
-    <Position X="10.5" Y="9" Width="1.5" />
+    <Position X="10.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameItem">
-    <Position X="13" Y="6" Width="1.5" />
+    <Position X="15.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\GameItem.cs</FileName>
@@ -86,7 +86,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Wear">
-    <Position X="12.5" Y="8" Width="1.5" />
+    <Position X="14.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAAQAAAAAAAEAAAAABAAAAAAAAAAAA=</HashCode>
       <FileName>Models\Wear.cs</FileName>
@@ -94,25 +94,53 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Drink">
-    <Position X="14.25" Y="8" Width="1.5" />
+    <Position X="17.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAACIAIAAAAAAAAAAAAAAAAAgAAAIAAAAAAAA=</HashCode>
       <FileName>Models\Drink.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="RPG_Game.Models.Goblin">
-    <Position X="12.25" Y="11" Width="1.5" />
+  <Class Name="RPG_Game.Models.Enemies.Goblin">
+    <Position X="11" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAABAAAAAAEAAABAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>Models\Goblin.cs</FileName>
+      <FileName>Models\Enemies\Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPG_Game.Models.Ogre">
-    <Position X="10.25" Y="11" Width="1.5" />
+  <Class Name="RPG_Game.Models.Enemies.Ogre">
+    <Position X="9" Y="13.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACABAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Models\Ogre.cs</FileName>
+      <FileName>Models\Enemies\Ogre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.GoblinBoss">
+    <Position X="13" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAgAAQAAEAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\GoblinBoss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.DrinkableItems.MinorHealingPotion">
+    <Position X="18.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DrinkableItems\MinorHealingPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.DrinkableItems.HealingPotion">
+    <Position X="20.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>Models\DrinkableItems\HealingPotion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.DrinkableItems.MajorHealingPotion">
+    <Position X="22.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DrinkableItems\MajorHealingPotion.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="RPG_Game.Interfaces.IGameUnit">
@@ -137,7 +165,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IMap" Collapsed="true">
-    <Position X="9.75" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQCAAAAAAAgAACAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMap.cs</FileName>
@@ -158,7 +186,7 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.ITile" Collapsed="true">
-    <Position X="11.5" Y="1.5" Width="1.5" />
+    <Position X="7.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Interfaces\ITile.cs</FileName>
@@ -188,7 +216,7 @@
   <Interface Name="RPG_Game.Interfaces.IEnemy">
     <Position X="2.75" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -1,4 +1,4 @@
-﻿namespace RPG_Game.Models
+﻿namespace RPG_Game.Models.Enemies
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
@@ -13,8 +13,8 @@
         private const int OgreAttack = 10;
         private const int OgreDefence = 20;
 
-        public Ogre(Texture2D texture, Flags flags, IMap map, Point position)
-            : base(texture, flags, map, position, OgreName, OgreHealth, OgreMana, OgreAttack, OgreDefence)
+        public Ogre(Texture2D texture, IMap map, Point position)
+            : base(texture, map, position, OgreName, OgreHealth, OgreMana, OgreAttack, OgreDefence)
         {
 
         }

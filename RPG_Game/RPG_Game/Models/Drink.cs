@@ -7,10 +7,10 @@
 
     public class Drink : GameItem, IDrinkable
     {
-        public Drink(Texture2D texture, Flags flags, IMap map, Point position, 
+        public Drink(Texture2D texture, IMap map, Point position, 
             string name, int healthRestorationPower, int manaRestorationPower, int healthIncreasePower, 
             int manaIncreasePower, int attackIncreasePower, int defenceIncreasePower) 
-            : base(texture, flags, map, position, name)
+            : base(texture, map, position, name)
         {
             this.HealthRestorationPower = healthRestorationPower;
             this.ManaRestorationPower = manaRestorationPower;

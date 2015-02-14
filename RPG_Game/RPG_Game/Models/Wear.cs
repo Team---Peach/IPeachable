@@ -7,9 +7,9 @@
 
     public class Wear : GameItem, IWearable
     {
-        public Wear(Texture2D texture, Flags flags, IMap map, Point position, 
+        public Wear(Texture2D texture, IMap map, Point position, 
             string name, int attackBonus, int defenceBonus, int healthBonus, int manaBonus) 
-            : base(texture, flags, map, position, name)
+            : base(texture, map, position, name)
         {
             this.AttackBonus = attackBonus;
             this.DefenceBonus = defenceBonus;

@@ -53,9 +53,9 @@ namespace RPG_Game.Engine
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            Texture2D mapFloor = Content.Load<Texture2D>("pebble_brown0");
-            Texture2D mapWall = Content.Load<Texture2D>("brick_brown0");
-            Texture2D playerTexture = Content.Load<Texture2D>("human_m");
+            Texture2D mapFloor = Content.Load<Texture2D>("Floor");
+            Texture2D mapWall = Content.Load<Texture2D>("Wall");
+            Texture2D playerTexture = Content.Load<Texture2D>("Player");
 
             Point visibleTiles = new Point(
                 (SCREEN_HEIGHT - 10) / Map.TILE_SIZE,
@@ -67,7 +67,8 @@ namespace RPG_Game.Engine
 
             // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
             this.player = new Player(playerTexture, this.map, Point.Zero);
-            Tools.GenerateEnemy(Content, this.map, 10);
+            Tools.GenerateEnemy(Content, this.map);
+            Tools.GenerateItems(Content, this.map);
         }
 
         protected override void UnloadContent()
