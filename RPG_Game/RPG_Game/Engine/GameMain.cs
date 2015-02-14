@@ -6,9 +6,12 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
+using RPG_Game.Interfaces;
+using RPG_Game.Models;
+using RPG_Game.Enums;
 #endregion
 
-namespace RPG_Game
+namespace RPG_Game.Engine
 {
     public class GameMain : Game
     {
@@ -18,7 +21,7 @@ namespace RPG_Game
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private IActor player;
+        private IPlayer player;
         private IMap map;
 
         // The previous (old) and the current (new)
@@ -63,7 +66,8 @@ namespace RPG_Game
                 visibleTiles);
 
             // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
-            this.player = new Unit(playerTexture, Flags.IsPlayerControl, this.map, Point.Zero);
+            this.player = new Player(playerTexture, this.map, Point.Zero);
+            Tools.GenerateEnemy(Content, this.map, 10);
         }
 
         protected override void UnloadContent()

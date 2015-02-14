@@ -1,8 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game
+﻿namespace RPG_Game.Models
 {
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Enums;
+    using RPG_Game.Interfaces;
+
     public class Terrain : ITerrain
     {
         private Flags flags;

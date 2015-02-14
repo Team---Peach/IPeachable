@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game
+﻿namespace RPG_Game.Interfaces
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+
     public interface IMap
     {
         ITile[,] Tiles { get; set; }
@@ -11,6 +10,6 @@ namespace RPG_Game
 
         void Draw(SpriteBatch spriteBatch, Point center);
         bool CheckTile(Point p);
-        bool MoveUnit(IActor actor, Point newLocation);
+        bool MoveUnit(IGameUnit actor, Point newLocation);
     }
 }

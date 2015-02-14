@@ -1,8 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game
+﻿namespace RPG_Game.Models
 {
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Enums;
+    using RPG_Game.Interfaces;
+
     public class Map : IMap
     {
         public const int TILE_SIZE = 32;
@@ -40,7 +42,7 @@ namespace RPG_Game
         }
         #endregion
 
-        public bool MoveUnit(IActor actor, Point newLocation)
+        public bool MoveUnit(IGameUnit actor, Point newLocation)
         {
             if (CheckTile(newLocation))
             {
@@ -123,7 +125,7 @@ namespace RPG_Game
             }
 
             // Return False if the point is blocked
-            if (this[point].Terrain.Flags.HasFlag(Flags.IsBlocked))
+            if (!this[point].Terrain.Flags.HasFlag(Flags.None))
             {
                 return false;
             }

@@ -1,8 +1,12 @@
-﻿using System;
-using Microsoft.Xna.Framework.Graphics;
-
-namespace RPG_Game
+﻿namespace RPG_Game.Models
 {
+    using System;
+    using Microsoft.Xna.Framework.Graphics;
+    using RPG_Game.Interfaces;
+    using RPG_Game.Enums;
+    using Microsoft.Xna.Framework;
+    using Microsoft.Xna.Framework.Content;
+
     public static class Tools
     {
         public static Random RNG = new Random();
@@ -34,6 +38,28 @@ namespace RPG_Game
             resultTiles[0, 0] = new Tile(new Terrain(texture, Flags.None));
 
             return resultTiles;
+        }
+
+        public static void GenerateEnemy(ContentManager content, IMap map, int enemyCount)
+        {
+            Texture2D enemyTexture = content.Load<Texture2D>("human_m");
+            int count = enemyCount;
+            for (int i = 0; i < map.Tiles.Length; i++)
+            {
+                for (int j = 0; j < map.Tiles.Length; j++)
+                {
+                    if (map.CheckTile(new Point(i, j)) && count != 0)
+                    {
+                        int next = RNG.Next(0, 100);
+
+                        if (next < 2)
+                        {
+                            Goblin goblin = new Goblin(enemyTexture, Flags.IsEnemy, map, new Point(i, j));
+                            count--;
+                        }
+                    }
+                }
+            }
         }
     }
 }
