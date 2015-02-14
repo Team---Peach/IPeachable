@@ -42,7 +42,7 @@
 
         public static void GenerateEnemy(ContentManager content, IMap map, int enemyCount)
         {
-            Texture2D enemyTexture = content.Load<Texture2D>("human_m");
+            Texture2D enemyTexture = content.Load<Texture2D>("Goblin");
             int count = enemyCount;
             for (int i = 0; i < map.Tiles.Length; i++)
             {
