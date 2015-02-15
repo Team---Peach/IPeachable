@@ -5,12 +5,15 @@
 
     public interface IPlayer : IGameUnit
     {
+        int MaxHealth { get; set; }
+        int MaxMana { get; set; }
         IList<IWearable> WearedItems { get; }
         IList<IGameItem> InventoryItems { get; }
 
-        bool Move(CardinalDirection dir);
+        void Move(CardinalDirection dir);
+        bool Fight(IEnemy enemy);
         void WearItem(IWearable itemToWear);
         void UseItem(IDrinkable itemToUse);
-        void AddToInventory(IGameItem itemToAdd);
+        void TakeItem(IGameItem item);
     }
 }

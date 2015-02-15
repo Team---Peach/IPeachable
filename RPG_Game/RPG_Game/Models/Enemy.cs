@@ -9,21 +9,26 @@
 
     public abstract class Enemy : GameUnit, IEnemy
     {
-        private readonly IList<IEnemy> dropList = new List<IEnemy>(); 
+        private readonly List<string> dropList;
 
         protected Enemy(Texture2D texture, IMap map, Point position,
-            string name, int health, int mana, int attack, int defence, List<IEnemy> dropList = null)
+            string name, int health, int mana, int attack, int defence, List<string> dropList)
             : base(texture, Flags.IsEnemy, map, position, name, health, mana, attack, defence)
         {
             this.dropList = dropList;
         }
 
-        public IList<IEnemy> DropList
+        public List<string> DropList
         {
             get
             {
-                return new List<IEnemy>(dropList);
+                return new List<string>(dropList);
             }
+        }
+
+        public string ItemToDrop()
+        {
+            return this.dropList[0];
         }
     }
 }

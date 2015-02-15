@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
+    <Compile Include="GameData\Textures.cs" />
     <Compile Include="Models\Enemies\GoblinBoss.cs" />
     <Compile Include="Models\DrinkableItems\HealingPotion.cs" />
     <Compile Include="Models\DrinkableItems\MajorHealingPotion.cs" />
@@ -84,10 +85,10 @@
     <Content Include="Content\Wall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Goblin.png">
+    <Content Include="Content\Enemies\Goblin.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\GoblinBoss.png">
+    <Content Include="Content\Enemies\GoblinBoss.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\HealthPotion.png">
@@ -102,16 +103,16 @@
     <Content Include="Content\MinorHealthPotion.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Ogre.png">
+    <Content Include="Content\Enemies\Ogre.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Floor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Rat.png">
+    <Content Include="Content\Enemies\Rat.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Spider.png">
+    <Content Include="Content\Enemies\Spider.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\wall_yellow_rock0.png">

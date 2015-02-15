@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 using RPG_Game.Interfaces;
 using RPG_Game.Models;
 using RPG_Game.Enums;
+using RPG_Game.GameData;
 #endregion
 
 namespace RPG_Game.Engine
@@ -52,23 +53,20 @@ namespace RPG_Game.Engine
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            Texture2D mapFloor = Content.Load<Texture2D>("Floor");
-            Texture2D mapWall = Content.Load<Texture2D>("Wall");
-            Texture2D playerTexture = Content.Load<Texture2D>("Player");
+            Textures.LoadTextures(Content);
 
             Point visibleTiles = new Point(
                 (SCREEN_HEIGHT - 10) / Map.TILE_SIZE,
                 (SCREEN_WIDTH - 10) / Map.TILE_SIZE);
 
             this.map = new Map(
-                Tools.GenerateMap(40, 40, mapFloor, mapWall),
+                Tools.GenerateMap(40, 40, Textures.MapFloor, Textures.MapWall),
                 visibleTiles);
 
             // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
-            this.player = new Player(playerTexture, this.map, Point.Zero);
-            Tools.GenerateEnemy(Content, this.map);
-            Tools.GenerateItems(Content, this.map);
+            this.player = new Player(Textures.Player, this.map, Point.Zero);
+            Tools.GenerateEnemy(this.map);
+            Tools.GenerateItems(this.map);
         }
 
         protected override void UnloadContent()

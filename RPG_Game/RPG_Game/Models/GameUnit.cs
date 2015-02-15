@@ -7,6 +7,8 @@
 
     public abstract class GameUnit : GameObject, IGameUnit
     {
+        private int health;
+
         protected GameUnit(Texture2D texture, Flags flags, IMap map, Point position,
             string name, int health, int mana, int attack, int defence)
             : base(texture, flags, map, position, name)
@@ -17,7 +19,21 @@
             this.Defence = defence;
         }
 
-        public int Health { get; set; }
+        public int Health
+        {
+            get { return this.health; }
+            set
+            {
+                if (value <= 0)
+                {
+                    this.health = 0;
+                }
+                else
+                {
+                    this.health = value;
+                }
+            }
+        }
 
         public int Mana { get; set; }
 

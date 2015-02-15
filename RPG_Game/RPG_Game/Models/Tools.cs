@@ -43,29 +43,25 @@
             return resultTiles;
         }
 
-        public static void GenerateEnemy(ContentManager content, IMap map)
+        public static void GenerateEnemy(IMap map)
         {
-            Texture2D goblinTexture = content.Load<Texture2D>("Goblin");
-            GenerateObject(map, goblinTexture, StartGameEnemies.goblin["count"],
+            GenerateObject(map, StartGameEnemies.goblin["count"],
                 StartGameEnemies.goblin["minDistance"], StartGameEnemies.goblin["maxDistance"], "goblin");
 
-            Texture2D goblinBossTexture = content.Load<Texture2D>("GoblinBoss");
-            GenerateObject(map, goblinBossTexture, StartGameEnemies.goblinBoss["count"],
+            GenerateObject(map, StartGameEnemies.goblinBoss["count"],
                 StartGameEnemies.goblinBoss["minDistance"], StartGameEnemies.goblinBoss["maxDistance"], "goblinBoss"); 
 
-            Texture2D ogreTexture = content.Load<Texture2D>("Ogre");
-            GenerateObject(map, ogreTexture, StartGameEnemies.ogre["count"],
+            GenerateObject(map, StartGameEnemies.ogre["count"],
                 StartGameEnemies.ogre["minDistance"], StartGameEnemies.ogre["maxDistance"], "ogre"); 
         }
 
-        internal static void GenerateItems(ContentManager content, IMap map)
+        internal static void GenerateItems(IMap map)
         {
-            Texture2D minorHPTexture = content.Load<Texture2D>("MinorHealthPotion");
-            GenerateObject(map, minorHPTexture, StartGameItems.minorHP["count"],
+            GenerateObject(map, StartGameItems.minorHP["count"],
                 StartGameItems.minorHP["minDistance"], StartGameItems.minorHP["maxDistance"], "minorHP");
         }
 
-        private static void GenerateObject(IMap map, Texture2D enemyTexture, int count, int minDistance, int maxDistance, string name)
+        private static void GenerateObject(IMap map, int count, int minDistance, int maxDistance, string name)
         {
             int objectCount = count;
             while (objectCount != 0)
@@ -74,12 +70,15 @@
                 {
                     for (int j = 0; j < maxDistance; j++)
                     {
-                        if (map.CheckTile(new Point(i, j)) && objectCount != 0 && (i > minDistance || j > minDistance))
+                        if (map.CheckIfTileIsOutOfBounds(new Point(i, j)) 
+                            && objectCount != 0 
+                            && (i > minDistance || j > minDistance)
+                            && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None))
                         {
                             int next = RNG.Next(0, 100);
                             if (next < 4)
                             {
-                                PlaceObjectOnMap(name, enemyTexture, map, new Point(i, j));
+                                PlaceObjectOnMap(name, map, new Point(i, j));
                                 objectCount--;
                             }
                         }
@@ -88,25 +87,25 @@
             }
         }
 
-        private static void PlaceObjectOnMap(string name, Texture2D enemyTexture, IMap map, Point point)
+        public static void PlaceObjectOnMap(string name, IMap map, Point point)
         {
             switch (name)
             {
                 case "goblin":
-                    Goblin goblin = new Goblin(enemyTexture, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags |= Flags.IsEnemy;
+                    Goblin goblin = new Goblin(Textures.Goblin, map, point);
+                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
                 case "goblinBoss":
-                    GoblinBoss goblinBoss = new GoblinBoss(enemyTexture, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags |= Flags.IsEnemy;
+                    GoblinBoss goblinBoss = new GoblinBoss(Textures.GoblinBoss, map, point);
+                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
                 case "ogre":
-                    Ogre ogre = new Ogre(enemyTexture, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags |= Flags.IsEnemy;
+                    Ogre ogre = new Ogre(Textures.Ogre, map, point);
+                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
                 case "minorHP":
-                    MinorHealingPotion minorHP = new MinorHealingPotion(enemyTexture, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags |= Flags.IsItem;
+                    MinorHealingPotion minorHP = new MinorHealingPotion(Textures.MinorHealthPotion, map, point);
+                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsItem;
                     break;
                 default:
                     break;
