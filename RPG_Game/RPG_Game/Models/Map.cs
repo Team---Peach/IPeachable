@@ -130,6 +130,11 @@
                 return false;
             }
 
+            if (this[point].Terrain.Flags.HasFlag(Flags.IsEnemy))
+            {
+                return false;
+            }
+
             return true;
         }
     }
