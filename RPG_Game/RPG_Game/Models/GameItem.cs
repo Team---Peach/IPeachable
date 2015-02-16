@@ -10,6 +10,9 @@
         public GameItem(Texture2D texture, IMap map, Point position, string name) 
             : base(texture, Flags.IsItem, map, position, name)
         {
+            this.Map = map;
+            this.Position = position;
+            this.Name = name;
         }
     }
 }
