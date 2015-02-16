@@ -17,6 +17,9 @@
             this.Mana = mana;
             this.Attack = attack;
             this.Defence = defence;
+
+            this.Energy = 0;
+            this.Speed = 10;
         }
 
         public int Health
@@ -40,5 +43,9 @@
         public int Attack { get; set; }
 
         public int Defence { get; set; }
+
+        public int Energy { get; set; }
+
+        public int Speed { get; set; }
     }
 }

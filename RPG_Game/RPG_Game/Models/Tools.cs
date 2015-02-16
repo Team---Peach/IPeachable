@@ -45,20 +45,36 @@
 
         public static void GenerateEnemy(IMap map)
         {
-            GenerateObject(map, StartGameEnemies.goblin["count"],
-                StartGameEnemies.goblin["minDistance"], StartGameEnemies.goblin["maxDistance"], "goblin");
+            GenerateObject(
+                map,
+                StartGameEnemies.goblin["count"],
+                StartGameEnemies.goblin["minDistance"],
+                StartGameEnemies.goblin["maxDistance"],
+                "goblin");
 
-            GenerateObject(map, StartGameEnemies.goblinBoss["count"],
-                StartGameEnemies.goblinBoss["minDistance"], StartGameEnemies.goblinBoss["maxDistance"], "goblinBoss"); 
+            GenerateObject(
+                map,
+                StartGameEnemies.goblinBoss["count"],
+                StartGameEnemies.goblinBoss["minDistance"],
+                StartGameEnemies.goblinBoss["maxDistance"],
+                "goblinBoss"); 
 
-            GenerateObject(map, StartGameEnemies.ogre["count"],
-                StartGameEnemies.ogre["minDistance"], StartGameEnemies.ogre["maxDistance"], "ogre"); 
+            GenerateObject(
+                map,
+                StartGameEnemies.ogre["count"],
+                StartGameEnemies.ogre["minDistance"],
+                StartGameEnemies.ogre["maxDistance"],
+                "ogre"); 
         }
 
         internal static void GenerateItems(IMap map)
         {
-            GenerateObject(map, StartGameItems.minorHP["count"],
-                StartGameItems.minorHP["minDistance"], StartGameItems.minorHP["maxDistance"], "minorHP");
+            GenerateObject(
+                map,
+                StartGameItems.minorHP["count"],
+                StartGameItems.minorHP["minDistance"],
+                StartGameItems.minorHP["maxDistance"],
+                "minorHP");
         }
 
         private static void GenerateObject(IMap map, int count, int minDistance, int maxDistance, string name)
@@ -93,20 +109,27 @@
             {
                 case "goblin":
                     Goblin goblin = new Goblin(Textures.Goblin, map, point);
+                    RPG_Game.Engine.GameMain.AddUnitToList(goblin);
                     map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
+
                 case "goblinBoss":
                     GoblinBoss goblinBoss = new GoblinBoss(Textures.GoblinBoss, map, point);
+                    RPG_Game.Engine.GameMain.AddUnitToList(goblinBoss);
                     map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
+
                 case "ogre":
                     Ogre ogre = new Ogre(Textures.Ogre, map, point);
+                    RPG_Game.Engine.GameMain.AddUnitToList(ogre);
                     map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
+
                 case "minorHP":
                     MinorHealingPotion minorHP = new MinorHealingPotion(Textures.MinorHealthPotion, map, point);
                     map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsItem;
                     break;
+
                 default:
                     break;
             }

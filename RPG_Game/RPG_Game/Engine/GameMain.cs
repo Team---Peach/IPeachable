@@ -18,12 +18,14 @@ namespace RPG_Game.Engine
     {
         private const int
             SCREEN_WIDTH = 1024,
-            SCREEN_HEIGHT = 640;
+            SCREEN_HEIGHT = 640,
+            MIN_TURN_COST = 100;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private IPlayer player;
         private IMap map;
+        private static List<GameUnit> unitList;
 
         // The previous (old) and the current (new)
         // keyboard states to check for key presses
@@ -46,6 +48,7 @@ namespace RPG_Game.Engine
             graphics.ApplyChanges();
 
             this.oldKBState = new KeyboardState();
+            unitList = new List<GameUnit>();
 
             base.Initialize();
         }
@@ -65,6 +68,8 @@ namespace RPG_Game.Engine
 
             // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
             this.player = new Player(Textures.Player, this.map, Point.Zero);
+            unitList.Add(player as GameUnit);
+
             Tools.GenerateEnemy(this.map);
             Tools.GenerateItems(this.map);
         }
@@ -82,50 +87,82 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
-            #region Keys Check
-            // Horizonta/Vertical movement
-            if (CheckKeys(Keys.Down, Keys.NumPad2))
+            foreach (GameUnit unit in unitList)
             {
-                this.player.Move(CardinalDirection.South);
+                unit.Energy += unit.Speed;
             }
 
-            if (CheckKeys(Keys.Up, Keys.NumPad8))
-            {
-                this.player.Move(CardinalDirection.North);
-            }
+            // Sort units in list by their energy.
+            unitList.Sort((x, y) => x.Energy.CompareTo(y.Energy));
 
-            if (CheckKeys(Keys.Left, Keys.NumPad4))
+            foreach (GameUnit unit in unitList)
             {
-                this.player.Move(CardinalDirection.West);
-            }
+                //unit.Energy += unit.Speed;
 
-            if (CheckKeys(Keys.Right, Keys.NumPad6))
-            {
-                this.player.Move(CardinalDirection.East);
-            }
+                if (unit.Energy >= MIN_TURN_COST)
+                {
+                    if (unit is IPlayer)
+                    {
+                        #region Keys Check
+                        // Horizonta/Vertical movement
+                        if (CheckKeys(Keys.Down, Keys.NumPad2))
+                        {
+                            this.player.Move(CardinalDirection.South);
+                            this.player.Energy -= 100;
+                        }
 
-            //Diagonal movement
-            if (CheckKeys(Keys.NumPad7))
-            {
-                this.player.Move(CardinalDirection.NorthWest);
-            }
+                        if (CheckKeys(Keys.Up, Keys.NumPad8))
+                        {
+                            this.player.Move(CardinalDirection.North);
+                            this.player.Energy -= 100;
+                        }
 
-            if (CheckKeys(Keys.NumPad9))
-            {
-                this.player.Move(CardinalDirection.NorthEast);
-            }
+                        if (CheckKeys(Keys.Left, Keys.NumPad4))
+                        {
+                            this.player.Move(CardinalDirection.West);
+                            this.player.Energy -= 100;
+                        }
 
-            if (CheckKeys(Keys.NumPad1))
-            {
-                this.player.Move(CardinalDirection.SouthWest);
-            }
+                        if (CheckKeys(Keys.Right, Keys.NumPad6))
+                        {
+                            this.player.Move(CardinalDirection.East);
+                            this.player.Energy -= 100;
+                        }
 
-            if (CheckKeys(Keys.NumPad3))
-            {
-                this.player.Move(CardinalDirection.SouthEast);
-            }
-            #endregion
+                        //Diagonal movement
+                        if (CheckKeys(Keys.NumPad7))
+                        {
+                            this.player.Move(CardinalDirection.NorthWest);
+                            this.player.Energy -= 100;
+                        }
 
+                        if (CheckKeys(Keys.NumPad9))
+                        {
+                            this.player.Move(CardinalDirection.NorthEast);
+                            this.player.Energy -= 100;
+                        }
+
+                        if (CheckKeys(Keys.NumPad1))
+                        {
+                            this.player.Move(CardinalDirection.SouthWest);
+                            this.player.Energy -= 100;
+                        }
+
+                        if (CheckKeys(Keys.NumPad3))
+                        {
+                            this.player.Move(CardinalDirection.SouthEast);
+                            this.player.Energy -= 100;
+                        }
+                        #endregion
+                    }
+                    else
+                    {
+                        //AI
+                        unit.Energy -= 100;
+                    }
+                }
+            }
+            
             // Set the old keyboard state
             this.oldKBState = this.newKBState;
 
@@ -139,6 +176,11 @@ namespace RPG_Game.Engine
             this.map.Draw(spriteBatch, player.Position);
 
             base.Draw(gameTime);
+        }
+
+        public static void AddUnitToList(GameUnit unit)
+        {
+            unitList.Add(unit);
         }
 
         private bool CheckKeys(params Keys[] keysDown)

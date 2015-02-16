@@ -8,7 +8,6 @@
     {
         string Name { get; set; }
         Flags Flags { get; set; }
-        Texture2D Texture { get; }
         Point Position { get; set; }
 
         bool Spawn(IMap map, Point position);

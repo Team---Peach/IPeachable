@@ -6,5 +6,7 @@
         int Mana { get; set; }
         int Attack { get; set; }
         int Defence { get; set; }
+        int Energy { get; set; }
+        int Speed { get; set; }
     }
 }
