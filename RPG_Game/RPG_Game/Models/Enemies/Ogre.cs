@@ -4,6 +4,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using RPG_Game.Enums;
     using RPG_Game.Interfaces;
+    using System.Collections.Generic;
 
     public class Ogre : Enemy
     {
@@ -13,8 +14,14 @@
         private const int OgreAttack = 10;
         private const int OgreDefence = 20;
 
+        private static List<string> dropList = new List<string>
+        {
+            // add few items
+            "minorHP"
+        };
+
         public Ogre(Texture2D texture, IMap map, Point position)
-            : base(texture, map, position, OgreName, OgreHealth, OgreMana, OgreAttack, OgreDefence)
+            : base(texture, map, position, OgreName, OgreHealth, OgreMana, OgreAttack, OgreDefence, dropList)
         {
 
         }

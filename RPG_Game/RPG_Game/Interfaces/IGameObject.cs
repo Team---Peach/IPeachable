@@ -4,7 +4,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using RPG_Game.Enums;
 
-    public interface IGameObject
+    public interface IGameObject : IDrawable
     {
         string Name { get; set; }
         Flags Flags { get; set; }

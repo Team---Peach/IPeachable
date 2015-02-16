@@ -6,6 +6,8 @@
     using Microsoft.Xna.Framework;
     using RPG_Game.Interfaces;
     using RPG_Game.Enums;
+    using System.Diagnostics;
+    using System.Threading;
 
     public class Player : GameUnit, IPlayer
     {
@@ -21,9 +23,15 @@
         public Player(Texture2D texture, IMap map, Point position)
             : base(texture, Flags.IsPlayerControl, map, position, PlayerName, PlayerHealth, PlayerMana, PlayerAttack, PlayerDefence)
         {
+            this.MaxHealth = PlayerHealth;
+            this.MaxMana = PlayerMana;
         }
 
         #region Properties
+
+        public int MaxHealth { get; set; }
+        public int MaxMana { get; set; }
+
         public IList<IWearable> WearedItems
         {
             get
@@ -42,7 +50,7 @@
         #endregion
 
 
-        public bool Move(CardinalDirection dir)
+        public void Move(CardinalDirection dir)
         {
             #region Delta Coordinates
             Point delta = Point.Zero;
@@ -87,8 +95,7 @@
             }
             #endregion
 
-            return
-                this.Map.MoveUnit(this, this.Position + delta);
+            this.Map.MoveUnit(this, this.Position + delta);
         }
 
 
@@ -97,15 +104,38 @@
             throw new NotImplementedException();
         }
 
-        public void AddToInventory(IGameItem itemToAdd)
+        public void UseItem(IDrinkable itemToUse)
         {
             throw new NotImplementedException();
         }
 
 
-        public void UseItem(IDrinkable itemToUse)
+        public bool Fight(IEnemy enemy)
         {
-            throw new NotImplementedException();
+            Stopwatch stopWatch = new Stopwatch();
+
+            while (this.Health > 0 && enemy.Health > 0)
+            {
+                stopWatch.Start();
+                Thread.Sleep(1000);
+                stopWatch.Stop();
+                this.Health = this.Health - (enemy.Attack - (enemy.Attack * (this.Defence / 100)));
+                enemy.Health = enemy.Health - (this.Attack - (this.Attack * (enemy.Defence / 100)));
+            }
+
+            if (this.Health == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public void TakeItem(IGameItem item)
+        {
+            inventory.Add(item);
         }
     }
 }

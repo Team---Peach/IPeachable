@@ -4,6 +4,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using RPG_Game.Enums;
     using RPG_Game.Interfaces;
+    using System;
 
     public class Map : IMap
     {
@@ -42,21 +43,43 @@
         }
         #endregion
 
-        public bool MoveUnit(IGameUnit actor, Point newLocation)
+        public void MoveUnit(IGameUnit actor, Point newLocation)
         {
-            if (CheckTile(newLocation))
+            if (CheckIfTileIsOutOfBounds(newLocation))
             {
-                this[actor.Position].Actor = null;
-                actor.Position = newLocation;
-                this[newLocation].Actor = actor;
-
-                return true;
+                switch (this.Tiles[newLocation.X, newLocation.Y].Terrain.Flags)
+                {
+                    case Flags.None:
+                        this[actor.Position].Actor = null;
+                        actor.Position = newLocation;
+                        this[newLocation].Actor = actor;
+                        break;
+                    case Flags.IsEnemy:
+                        bool playerWin = (actor as Player).Fight(this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy);
+                        if (playerWin)
+                        {
+                            string dropItemName = (this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy).ItemToDrop();
+                            this.Tiles[newLocation.X, newLocation.Y].Actor = null;
+                            Tools.PlaceObjectOnMap(dropItemName, this, new Point(newLocation.X, newLocation.Y));
+                        }
+                        else
+                        {
+                            // Game Over
+                        }
+                        break;
+                    case Flags.IsItem:
+                        (actor as Player).TakeItem(this.Tiles[newLocation.X, newLocation.Y].Actor as GameItem);
+                        this[actor.Position].Actor = null;
+                        actor.Position = newLocation;
+                        this[newLocation].Actor = actor;
+                        break;
+                    default:
+                        break;
+                }
             }
-
-            return false;
         }
 
-        public void Draw(SpriteBatch spriteBatch, Point center) 
+        public void Draw(SpriteBatch spriteBatch, Point center)
         {
             spriteBatch.Begin();
 
@@ -68,7 +91,7 @@
             // Check coordinates lower bound < 0
             if (startTile.X < 0)
             {
-                startTile.X = 0; 
+                startTile.X = 0;
             }
             if (startTile.Y < 0)
             {
@@ -115,22 +138,11 @@
             spriteBatch.End();
         }
 
-        public bool CheckTile(Point point)
+        public bool CheckIfTileIsOutOfBounds(Point point)
         {
             // Return false if the point is out of bounds
             if (point.X < 0 || point.X >= this.Height ||
                 point.Y < 0 || point.Y >= this.Width)
-            {
-                return false;
-            }
-
-            // Return False if the point is blocked
-            if (!this[point].Terrain.Flags.HasFlag(Flags.None))
-            {
-                return false;
-            }
-
-            if (this[point].Terrain.Flags.HasFlag(Flags.IsEnemy))
             {
                 return false;
             }
