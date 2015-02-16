@@ -38,6 +38,9 @@
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
     <Compile Include="GameData\Textures.cs" />
+    <Compile Include="Models\DroppedItems\Shield.cs" />
+    <Compile Include="Models\DroppedItems\Staff.cs" />
+    <Compile Include="Models\DroppedItems\Sword.cs" />
     <Compile Include="Models\Enemies\GoblinBoss.cs" />
     <Compile Include="Models\DrinkableItems\HealingPotion.cs" />
     <Compile Include="Models\DrinkableItems\MajorHealingPotion.cs" />
