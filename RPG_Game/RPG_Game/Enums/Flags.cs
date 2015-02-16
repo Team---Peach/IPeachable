@@ -1,5 +1,7 @@
-﻿namespace RPG_Game.Enums
+﻿using System;
+namespace RPG_Game.Enums
 {
+    [Flags]
     public enum Flags
     {
         IsPlayerControl,
