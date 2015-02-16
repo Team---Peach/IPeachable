@@ -86,7 +86,7 @@
                 {
                     for (int j = 0; j < maxDistance; j++)
                     {
-                        if (map.CheckIfTileIsOutOfBounds(new Point(i, j)) 
+                        if (map.CheckTile(new Point(i, j)) 
                             && objectCount != 0 
                             && (i > minDistance || j > minDistance)
                             && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None))
@@ -135,6 +135,9 @@
             }
         }
 
-        
+        public static CardinalDirection RandomDirection()
+        {
+            return (CardinalDirection)RNG.Next(0, 8);
+        }
     }
 }

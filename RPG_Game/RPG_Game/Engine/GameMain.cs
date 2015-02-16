@@ -26,6 +26,7 @@ namespace RPG_Game.Engine
         private IPlayer player;
         private IMap map;
         private static List<GameUnit> unitList;
+        private bool waitPlayerAction = false;
 
         // The previous (old) and the current (new)
         // keyboard states to check for key presses
@@ -87,9 +88,12 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
-            foreach (GameUnit unit in unitList)
+            if (!waitPlayerAction)
             {
-                unit.Energy += unit.Speed;
+                foreach (GameUnit unit in unitList)
+                {
+                    unit.Energy += unit.Speed;
+                }
             }
 
             // Sort units in list by their energy.
@@ -103,30 +107,36 @@ namespace RPG_Game.Engine
                 {
                     if (unit is IPlayer)
                     {
+                        waitPlayerAction = true;
+
                         #region Keys Check
                         // Horizonta/Vertical movement
                         if (CheckKeys(Keys.Down, Keys.NumPad2))
                         {
                             this.player.Move(CardinalDirection.South);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.Up, Keys.NumPad8))
                         {
                             this.player.Move(CardinalDirection.North);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.Left, Keys.NumPad4))
                         {
                             this.player.Move(CardinalDirection.West);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.Right, Keys.NumPad6))
                         {
                             this.player.Move(CardinalDirection.East);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         //Diagonal movement
@@ -134,31 +144,39 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.NorthWest);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.NumPad9))
                         {
                             this.player.Move(CardinalDirection.NorthEast);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.NumPad1))
                         {
                             this.player.Move(CardinalDirection.SouthWest);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
 
                         if (CheckKeys(Keys.NumPad3))
                         {
                             this.player.Move(CardinalDirection.SouthEast);
                             this.player.Energy -= 100;
+                            waitPlayerAction = false;
                         }
                         #endregion
                     }
                     else
                     {
                         //AI
-                        unit.Energy -= 100;
+                        if (!waitPlayerAction)
+                        {
+                            unit.Move(Tools.RandomDirection());
+                            unit.Energy -= 100;
+                        }
                     }
                 }
             }

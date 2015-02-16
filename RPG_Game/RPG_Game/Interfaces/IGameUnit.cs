@@ -1,4 +1,5 @@
-﻿namespace RPG_Game.Interfaces
+﻿using RPG_Game.Enums;
+namespace RPG_Game.Interfaces
 {
     public interface IGameUnit : IGameObject
     {
@@ -8,5 +9,6 @@
         int Defence { get; set; }
         int Energy { get; set; }
         int Speed { get; set; }
+        void Move(CardinalDirection dir);
     }
 }

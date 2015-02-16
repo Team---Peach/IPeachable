@@ -69,7 +69,7 @@
 
         public bool Spawn(IMap map, Point position)
         {
-            if (map.CheckIfTileIsOutOfBounds(position))
+            if (map.CheckTile(position))
             {
                 map[position].Actor = this;
 

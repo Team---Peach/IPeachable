@@ -49,7 +49,7 @@
         }
         #endregion
 
-
+        /*
         public void Move(CardinalDirection dir)
         {
             #region Delta Coordinates
@@ -97,7 +97,7 @@
 
             this.Map.MoveUnit(this, this.Position + delta);
         }
-
+        */
 
         public void WearItem(IWearable itemToWear)
         {

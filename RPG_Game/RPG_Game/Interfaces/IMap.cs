@@ -9,7 +9,7 @@
         ITile this[Point index] { get; set; }
 
         void Draw(SpriteBatch spriteBatch, Point center);
-        bool CheckIfTileIsOutOfBounds(Point p);
+        bool CheckTile(Point p);
         void MoveUnit(IGameUnit actor, Point newLocation);
     }
 }

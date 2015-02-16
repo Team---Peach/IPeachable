@@ -10,7 +10,6 @@
         IList<IWearable> WearedItems { get; }
         IList<IGameItem> InventoryItems { get; }
 
-        void Move(CardinalDirection dir);
         bool Fight(IEnemy enemy);
         void WearItem(IWearable itemToWear);
         void UseItem(IDrinkable itemToUse);

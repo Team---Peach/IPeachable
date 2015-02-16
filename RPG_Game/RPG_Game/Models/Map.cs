@@ -45,8 +45,13 @@
 
         public void MoveUnit(IGameUnit actor, Point newLocation)
         {
-            if (CheckIfTileIsOutOfBounds(newLocation))
+            if (CheckTile(newLocation))
             {
+                this[actor.Position].Actor = null;
+                actor.Position = newLocation;
+                this[newLocation].Actor = actor;
+
+                /*
                 switch (this.Tiles[newLocation.X, newLocation.Y].Terrain.Flags)
                 {
                     case Flags.None:
@@ -75,7 +80,7 @@
                         break;
                     default:
                         break;
-                }
+                }*/
             }
         }
 
@@ -138,11 +143,16 @@
             spriteBatch.End();
         }
 
-        public bool CheckIfTileIsOutOfBounds(Point point)
+        public bool CheckTile(Point point)
         {
             // Return false if the point is out of bounds
             if (point.X < 0 || point.X >= this.Height ||
                 point.Y < 0 || point.Y >= this.Width)
+            {
+                return false;
+            }
+
+            if (this[point].Terrain.Flags.HasFlag(Flags.IsBlocked))
             {
                 return false;
             }
