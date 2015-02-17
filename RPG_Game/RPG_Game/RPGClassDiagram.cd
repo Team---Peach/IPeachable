@@ -3,14 +3,14 @@
   <Class Name="RPG_Game.Engine.GameMain">
     <Position X="16" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEEAAAAAAAwBAAAAAAQAgAAAgAAgBAQAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAEEAAAAAAAwBAAAFAAQAgAgAgAggBAQAAAAAAAAQ=</HashCode>
       <FileName>Engine\GameMain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Map" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="7.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAABQAAAgAACAAAAEAAAgAAAAIAAAAAAAAEAQA=</HashCode>
+      <HashCode>AAAAQCAABQAAAgAACAAAAEAAAgAAAAIAAAAAAAAEAAA=</HashCode>
       <FileName>Models\Map.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -41,14 +41,14 @@
   <Class Name="RPG_Game.Models.Tools" Collapsed="true">
     <Position X="7.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAIAAAAAAAAAAAAAAAAAIAAAQAAAAAAAABQAAAA=</HashCode>
+      <HashCode>AAAEAAIAAAAAAAAAAAAAgAAAIAAAQAAAAAAAABQAAAA=</HashCode>
       <FileName>Models\Tools.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Player" BaseTypeListCollapsed="true">
     <Position X="6.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAAAYAAIAICAoAgAAAAIBABAAASAAiAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAYAAAAICAoAgAAAAIBABAAASAAiAAAAAAAAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -56,15 +56,15 @@
   <Class Name="RPG_Game.Models.GameObject">
     <Position X="10.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAFAAAABAAAAAgAAEAIAQAAAAEAgAAAAIAAAAAAAQ=</HashCode>
+      <HashCode>AAAAEAAAABAAAAAgAAEAIAQAAAAEAgAAAAIAAAAAAAA=</HashCode>
       <FileName>Models\GameObject.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameUnit">
-    <Position X="10" Y="6.25" Width="1.5" />
+    <Position X="10" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAIgAAAAg=</HashCode>
+      <HashCode>AAAACAAAAIAAAAAAAAEEAAABAIAAAAAAAAAAIgAAAAg=</HashCode>
       <FileName>Models\GameUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -72,15 +72,15 @@
   <Class Name="RPG_Game.Models.Enemy">
     <Position X="10.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAQAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameItem">
-    <Position X="15.75" Y="5.5" Width="1.5" />
+    <Position X="14.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\GameItem.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -104,21 +104,21 @@
   <Class Name="RPG_Game.Models.Enemies.Goblin">
     <Position X="11" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAABAAAAAAEAAABAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAABAAAAAABAAAAAAEAAABAAAAAgAAAAAAAAAAgA=</HashCode>
       <FileName>Models\Enemies\Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Enemies.Ogre">
     <Position X="9" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACABAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAACABAAAAAAAAAAAAAAAQAAAABAAAgAAAAAAAAAAAI=</HashCode>
       <FileName>Models\Enemies\Ogre.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Enemies.GoblinBoss">
     <Position X="13" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAAgAAQAAEAAAAAQAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAgAAQAAEAAAAgQAAAAAAAAAAA=</HashCode>
       <FileName>Models\Enemies\GoblinBoss.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -146,7 +146,7 @@
   <Interface Name="RPG_Game.Interfaces.IGameUnit">
     <Position X="0.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAIgAAAAA=</HashCode>
+      <HashCode>AAAACAAAAIAAAAAAAAAEAAABAIAAAAAAAAAAIgAAAAA=</HashCode>
       <FileName>Interfaces\IGameUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -160,7 +160,7 @@
   <Interface Name="RPG_Game.Interfaces.IMap" Collapsed="true">
     <Position X="7.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAgAACAAAAAAAAAAAAAIAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAQCAAAAAAAgAACAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMap.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -181,7 +181,7 @@
   <Interface Name="RPG_Game.Interfaces.IGameObject">
     <Position X="3.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAgAAEAAAQAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAgAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IGameObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -193,16 +193,16 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IPlayer">
-    <Position X="0.5" Y="8.25" Width="1.5" />
+    <Position X="0.5" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAIAICAIAAAAAAIAABAAAQAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAICAIAAAAAAIAABAAAQAAgAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IEnemy">
-    <Position X="2.75" Y="8.25" Width="1.5" />
+    <Position X="2.75" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -230,7 +230,7 @@
   <Enum Name="RPG_Game.Enums.Flags" Collapsed="true">
     <Position X="14.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAEEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAEAAAA=</HashCode>
       <FileName>Enums\Flags.cs</FileName>
     </TypeIdentifier>
   </Enum>

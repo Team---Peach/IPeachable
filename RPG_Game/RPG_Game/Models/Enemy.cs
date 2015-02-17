@@ -13,7 +13,7 @@
 
         protected Enemy(Texture2D texture, IMap map, Point position,
             string name, int health, int mana, int attack, int defence, List<string> dropList)
-            : base(texture, Flags.IsEnemy, map, position, name, health, mana, attack, defence)
+            : base(texture, map, position, name, health, mana, attack, defence)
         {
             this.dropList = dropList;
         }

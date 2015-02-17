@@ -89,7 +89,9 @@
                         if (map.CheckTile(new Point(i, j)) 
                             && objectCount != 0 
                             && (i > minDistance || j > minDistance)
-                            && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None))
+                            && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None)
+                            && map.Tiles[i,j].Actor == null
+                            && map.Tiles[i, j].Item == null)
                         {
                             int next = RNG.Next(0, 100);
                             if (next < 4)
@@ -110,24 +112,20 @@
                 case "goblin":
                     Goblin goblin = new Goblin(Textures.Goblin, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblin);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "goblinBoss":
                     GoblinBoss goblinBoss = new GoblinBoss(Textures.GoblinBoss, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinBoss);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "ogre":
                     Ogre ogre = new Ogre(Textures.Ogre, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(ogre);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "minorHP":
                     MinorHealingPotion minorHP = new MinorHealingPotion(Textures.MinorHealthPotion, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsItem;
                     break;
 
                 default:

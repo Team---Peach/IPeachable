@@ -26,6 +26,7 @@ namespace RPG_Game.Engine
         private IPlayer player;
         private IMap map;
         private static List<GameUnit> unitList;
+        private static List<GameUnit> unitsToRemoveList;
         private bool waitPlayerAction = false;
 
         // The previous (old) and the current (new)
@@ -50,6 +51,7 @@ namespace RPG_Game.Engine
 
             this.oldKBState = new KeyboardState();
             unitList = new List<GameUnit>();
+            unitsToRemoveList = new List<GameUnit>();
 
             base.Initialize();
         }
@@ -88,12 +90,34 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
+            if (this.player.Health <= 0)
+            {
+                // TODO
+                throw new ArgumentException("Game Over");
+            }
+
             if (!waitPlayerAction)
             {
                 foreach (GameUnit unit in unitList)
                 {
                     unit.Energy += unit.Speed;
                 }
+            }
+
+            foreach (GameUnit unit in unitList)
+            {
+                if (unit.Health <= 0)
+                {
+                    string item = (unit as Enemy).ItemToDrop();
+                    Tools.PlaceObjectOnMap(item, this.map, unit.Position);
+                    this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
+                    unitsToRemoveList.Add(unit);
+                }
+            }
+
+            foreach (var unitForRemove in unitsToRemoveList)
+            {
+                unitList.Remove(unitForRemove);
             }
 
             // Sort units in list by their energy.

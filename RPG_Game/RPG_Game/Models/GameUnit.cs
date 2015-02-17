@@ -9,9 +9,9 @@
     {
         private int health;
 
-        protected GameUnit(Texture2D texture, Flags flags, IMap map, Point position,
+        protected GameUnit(Texture2D texture, IMap map, Point position,
             string name, int health, int mana, int attack, int defence)
-            : base(texture, flags, map, position, name)
+            : base(texture, map, position, name)
         {
             this.Health = health;
             this.Mana = mana;
@@ -94,6 +94,26 @@
             #endregion
 
             this.Map.MoveUnit(this, this.Position + delta);
+        }
+
+        public override bool Spawn(IMap map, Point position)
+        {
+            if (map.CheckTile(position))
+            {
+                map[position].Actor = this;
+
+                this.Map = map;
+                this.Position = position;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public void Hit(IGameUnit target)
+        {
+            target.Health = target.Health - (this.Attack - (this.Attack * (target.Defence / 100)));
         }
     }
 }
