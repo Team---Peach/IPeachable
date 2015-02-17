@@ -21,7 +21,7 @@
         private IList<IGameItem> inventory = new List<IGameItem>();
 
         public Player(Texture2D texture, IMap map, Point position)
-            : base(texture, Flags.IsPlayerControl, map, position, PlayerName, PlayerHealth, PlayerMana, PlayerAttack, PlayerDefence)
+            : base(texture, map, position, PlayerName, PlayerHealth, PlayerMana, PlayerAttack, PlayerDefence)
         {
             this.MaxHealth = PlayerHealth;
             this.MaxMana = PlayerMana;
@@ -48,56 +48,6 @@
             }
         }
         #endregion
-
-        /*
-        public void Move(CardinalDirection dir)
-        {
-            #region Delta Coordinates
-            Point delta = Point.Zero;
-
-            switch (dir)
-            {
-                case CardinalDirection.North:
-                    delta.X = -1;
-                    break;
-
-                case CardinalDirection.South:
-                    delta.X = 1;
-                    break;
-
-                case CardinalDirection.West:
-                    delta.Y = -1;
-                    break;
-
-                case CardinalDirection.East:
-                    delta.Y = 1;
-                    break;
-
-                case CardinalDirection.NorthWest:
-                    delta.X = -1;
-                    delta.Y = -1;
-                    break;
-
-                case CardinalDirection.NorthEast:
-                    delta.X = -1;
-                    delta.Y = 1;
-                    break;
-
-                case CardinalDirection.SouthWest:
-                    delta.X = 1;
-                    delta.Y = -1;
-                    break;
-
-                case CardinalDirection.SouthEast:
-                    delta.X = 1;
-                    delta.Y = 1;
-                    break;
-            }
-            #endregion
-
-            this.Map.MoveUnit(this, this.Position + delta);
-        }
-        */
 
         public void WearItem(IWearable itemToWear)
         {

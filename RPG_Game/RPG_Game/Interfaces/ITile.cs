@@ -4,7 +4,7 @@
     {
         IGameObject Actor { get; set; }
         ITerrain Terrain { get; set; }
-        IItem Item { get; set; }
+        IGameItem Item { get; set; }
         IObject GameObject { get; set; }
     }
 }

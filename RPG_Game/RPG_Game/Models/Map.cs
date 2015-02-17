@@ -43,44 +43,63 @@
         }
         #endregion
 
+        /// <summary>
+        /// If its bloked position - dont move.
+        ///     If player wants to move to an item - take it
+        ///     If player wants to move to an enemy - hit it
+        ///     
+        ///     If enemy wants to move to a player - hit it
+        /// 
+        /// Both move if position is free.
+        /// </summary>
+        /// <param name="actor">Player or enemy</param>
+        /// <param name="newLocation">The position we/he wants to move</param>
         public void MoveUnit(IGameUnit actor, Point newLocation)
         {
             if (CheckTile(newLocation))
             {
-                this[actor.Position].Actor = null;
-                actor.Position = newLocation;
-                this[newLocation].Actor = actor;
-
-                /*
-                switch (this.Tiles[newLocation.X, newLocation.Y].Terrain.Flags)
+                if (actor is IPlayer)
                 {
-                    case Flags.None:
+                    if (this.Tiles[newLocation.X, newLocation.Y].Actor != null)
+                    {
+                        actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);
+                    }
+                    else if (this.Tiles[newLocation.X, newLocation.Y].Item != null)
+                    {
+                        (actor as Player).TakeItem(this.Tiles[newLocation.X, newLocation.Y].Item);
+                        this.Tiles[newLocation.X, newLocation.Y].Item = null;
                         this[actor.Position].Actor = null;
                         actor.Position = newLocation;
                         this[newLocation].Actor = actor;
-                        break;
-                    case Flags.IsEnemy:
-                        bool playerWin = (actor as Player).Fight(this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy);
-                        if (playerWin)
-                        {
-                            string dropItemName = (this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy).ItemToDrop();
-                            this.Tiles[newLocation.X, newLocation.Y].Actor = null;
-                            Tools.PlaceObjectOnMap(dropItemName, this, new Point(newLocation.X, newLocation.Y));
-                        }
-                        else
-                        {
-                            // Game Over
-                        }
-                        break;
-                    case Flags.IsItem:
-                        (actor as Player).TakeItem(this.Tiles[newLocation.X, newLocation.Y].Actor as GameItem);
+                    }
+                    else
+                    {
                         this[actor.Position].Actor = null;
                         actor.Position = newLocation;
                         this[newLocation].Actor = actor;
-                        break;
-                    default:
-                        break;
-                }*/
+                    }
+                }
+                else if (actor is IEnemy)
+                {
+                    if (this.Tiles[newLocation.X, newLocation.Y].Actor is IPlayer)
+                    {
+                        actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);
+                    }
+                    else if (this.Tiles[newLocation.X, newLocation.Y].Actor is IEnemy)
+                    {
+                        // Will they help each other ?
+                    }
+                    else if (this.Tiles[newLocation.X, newLocation.Y].Item != null)
+                    {
+                        // Will they take items ?
+                    }
+                    else
+                    {
+                        this[actor.Position].Actor = null;
+                        actor.Position = newLocation;
+                        this[newLocation].Actor = actor;
+                    }
+                }
             }
         }
 
