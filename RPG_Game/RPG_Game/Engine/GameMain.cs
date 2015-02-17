@@ -104,7 +104,10 @@ namespace RPG_Game.Engine
                 }
             }
 
+<<<<<<< HEAD
             
+=======
+>>>>>>> origin/master
             foreach (GameUnit unit in unitList)
             {
                 if (unit.Health <= 0)
