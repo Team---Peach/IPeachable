@@ -103,11 +103,7 @@ namespace RPG_Game.Engine
                     unit.Energy += unit.Speed;
                 }
             }
-
-<<<<<<< HEAD
-            
-=======
->>>>>>> origin/master
+			
             foreach (GameUnit unit in unitList)
             {
                 if (unit.Health <= 0)
