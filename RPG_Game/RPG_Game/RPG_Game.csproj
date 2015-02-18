@@ -189,7 +189,7 @@
     <Content Include="Content\Items\Equip\LeatherShield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Items\Equip\LetherBoots.png">
+    <Content Include="Content\Items\Equip\LeatherBoots.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Items\Equip\Pants.png">
