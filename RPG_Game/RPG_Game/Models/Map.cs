@@ -60,6 +60,7 @@
             {
                 if (actor is IPlayer)
                 {
+                    (actor as Player).Turns++;
                     if (this.Tiles[newLocation.X, newLocation.Y].Actor != null)
                     {
                         actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);

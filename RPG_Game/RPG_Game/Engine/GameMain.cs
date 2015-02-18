@@ -150,7 +150,6 @@ namespace RPG_Game.Engine
             foreach (GameUnit unit in unitList)
             {
                 //unit.Energy += unit.Speed;
-
                 if (unit.Energy >= MIN_TURN_COST)
                 {
                     if (unit is IPlayer)
@@ -228,6 +227,10 @@ namespace RPG_Game.Engine
                             {
                                 this.player.EquipItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable);
                             }
+                        }
+                        if (CheckKeys(Keys.H))
+                        {
+                            (this.player as Player).Heal();
                         }
                         #endregion
                     }

@@ -16,6 +16,8 @@
         private const int PlayerMana = 500;
         private const int PlayerAttack = 25;
         private const int PlayerDefence = 50;
+        private int turns = 0;
+        private int lastHeal = 0;
 
         private IDictionary<string, IEquipable> equipedItems = new Dictionary<string, IEquipable>
         {
@@ -47,7 +49,14 @@
                 return new Dictionary<string, IEquipable>(equipedItems);
             }
         }
-
+        public int Turns 
+        {
+            get { return this.turns; }
+            set
+            {
+                this.turns = value;
+            } 
+        }
         #endregion
 
         public void EquipItem(IEquipable itemToWear)
@@ -61,6 +70,28 @@
             string info = "You drinked " + itemToUse.Name + " and restore " + itemToUse.HealthRestorationPower + " health";
             this.Health += itemToUse.HealthRestorationPower;
             InfoPanel.AddInfo(info);
+        }
+        public void Heal()
+        {
+            
+            if (this.Turns - this.lastHeal > 20 && this.Mana >= 300)
+            {
+                this.Health += 50;
+                this.Mana -= 300;
+                this.lastHeal = this.Turns;
+                string info = "You healed yourself for 50 Health";
+                InfoPanel.AddInfo(info);
+            }
+            else if (this.Turns - this.lastHeal < 20)
+            {
+                string info = string.Format("Heal is on cooldown wait {0} more turns", this.Turns - this.lastHeal);
+                InfoPanel.AddInfo(info);
+            }
+            else
+            {
+                string info = string.Format("Not enough mana!");
+                InfoPanel.AddInfo(info);
+            }
         }
     }
 }
