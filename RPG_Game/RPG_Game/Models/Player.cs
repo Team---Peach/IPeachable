@@ -49,11 +49,8 @@
         }
         #endregion
 
-<<<<<<< HEAD
         public void WearItem(IEquipable itemToWear)
-=======
-        public void WearItem(IWearable itemToWear)
->>>>>>> origin/master
+
         {
             throw new NotImplementedException();
         }

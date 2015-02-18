@@ -113,7 +113,6 @@
 
         public void Hit(IGameUnit target)
         {
-<<<<<<< HEAD
             int damage = (this.Attack - (this.Attack * (target.Defence / 100)));
             target.Health -= damage;
             string info = GenerateInfoText(damage, target);
@@ -132,9 +131,6 @@
                 string result = "You hit " +target.Name + " for " + damage + " damage!";
                 return result;
             }
-=======
-            target.Health = target.Health - (this.Attack - (this.Attack * (target.Defence / 100)));
->>>>>>> origin/master
         }
     }
 }
