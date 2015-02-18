@@ -125,39 +125,105 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Enemies\AncientSwordsman.png" />
-    <Content Include="Content\Enemies\Destructo.png" />
-    <Content Include="Content\Enemies\FinalBoss.png" />
-    <Content Include="Content\Enemies\GoblinWarrior.png" />
-    <Content Include="Content\Enemies\GoblinWarriorBoss.png" />
-    <Content Include="Content\Enemies\OgreBoss.png" />
-    <Content Include="Content\Enemies\Shade.png" />
-    <Content Include="Content\Enemies\ShadeBoss.png" />
-    <Content Include="Content\Enemies\Stranger.png" />
-    <Content Include="Content\Items\Equip\Boots.png" />
-    <Content Include="Content\Items\Equip\EnchantedArmor.png" />
-    <Content Include="Content\Items\Equip\EnchantedBoots.png" />
-    <Content Include="Content\Items\Equip\EnchantedGloves.png" />
-    <Content Include="Content\Items\Equip\EnchantedHelmet.png" />
-    <Content Include="Content\Items\Equip\EnchantedPants.png" />
-    <Content Include="Content\Items\Equip\EnchantedShield.png" />
-    <Content Include="Content\Items\Equip\EnchantedStaff.png" />
-    <Content Include="Content\Items\Equip\EnchantedSword.png" />
-    <Content Include="Content\Items\Equip\Hat.png" />
-    <Content Include="Content\Items\Equip\Helmet.png" />
-    <Content Include="Content\Items\Equip\IronArmor.png" />
-    <Content Include="Content\Items\Equip\LeatherArmor.png" />
-    <Content Include="Content\Items\Equip\LeatherGloves.png" />
-    <Content Include="Content\Items\Equip\LeatherPants.png" />
-    <Content Include="Content\Items\Equip\LeatherShield.png" />
-    <Content Include="Content\Items\Equip\LetherBoots.png" />
-    <Content Include="Content\Items\Equip\Pants.png" />
-    <Content Include="Content\Items\Equip\RunicGloves.png" />
-    <Content Include="Content\Items\Equip\ShortStaff.png" />
-    <Content Include="Content\Items\Equip\ShortSword.png" />
-    <Content Include="Content\Items\Equip\Staff.png" />
-    <Content Include="Content\Items\Equip\Sword.png" />
-    <Content Include="Content\Items\Equip\WoodenShield.png" />
+    <Content Include="Content\Enemies\AncientSwordsman.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\Destructo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\FinalBoss.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\GoblinWarrior.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\GoblinWarriorBoss.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\OgreBoss.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\Shade.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\ShadeBoss.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Enemies\Stranger.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Boots.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedArmor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedBoots.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedGloves.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedHelmet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedPants.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedShield.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedStaff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\EnchantedSword.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Hat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Helmet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\IronArmor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\LeatherArmor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\LeatherBoots.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\LeatherGloves.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\LeatherPants.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\LeatherShield.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Pants.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\RunicGloves.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\ShortStaff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\ShortSword.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Staff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\Sword.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Items\Equip\WoodenShield.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Wall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

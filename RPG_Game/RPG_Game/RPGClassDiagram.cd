@@ -24,7 +24,7 @@
   <Class Name="RPG_Game.GameData.Textures" Collapsed="true">
     <Position X="31.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>UCEEAAQI0CBSihQgIRAACAgSASAMEIEAADAAgyAAhQI=</HashCode>
+      <HashCode>UCEEAAQI0CBSihQgIRAgCAgSASAMEIEAADAAgyAABQI=</HashCode>
       <FileName>GameData\Textures.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,7 +39,7 @@
   <Class Name="RPG_Game.Models.Enemy" Collapsed="true">
     <Position X="16" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAIAIAAAAAAAAAAAACAAAAAgBAAAAAQAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -409,10 +409,10 @@
       <FileName>Models\Enemies\GoblinWarrior.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPG_Game.OgreBoss" Collapsed="true">
+  <Class Name="RPG_Game.Models.Enemies.OgreBoss" Collapsed="true">
     <Position X="20" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAAAAAAAgAAAAAAAAAAABAAACAAAgAAAACAAAAAAA=</HashCode>
       <FileName>Models\Enemies\OgreBoss.cs</FileName>
     </TypeIdentifier>
   </Class>
