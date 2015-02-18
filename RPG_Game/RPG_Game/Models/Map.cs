@@ -63,6 +63,8 @@
                     if (this.Tiles[newLocation.X, newLocation.Y].Actor != null)
                     {
                         actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);
+                        (this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy).InBattle = true;
+                        (this.Tiles[newLocation.X, newLocation.Y].Actor as Enemy).Player = actor as Player;
                     }
                     else
                     {
@@ -76,6 +78,8 @@
                     if (this.Tiles[newLocation.X, newLocation.Y].Actor is IPlayer)
                     {
                         actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);
+                        (actor as Enemy).InBattle = true;
+                        (actor as Enemy).Player = this.Tiles[newLocation.X, newLocation.Y].Actor as Player;
                     }
                     else if (this.Tiles[newLocation.X, newLocation.Y].Actor is IEnemy)
                     {

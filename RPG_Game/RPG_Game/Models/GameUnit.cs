@@ -48,7 +48,7 @@
 
         public int Speed { get; set; }
 
-        public void Move(CardinalDirection dir)
+        public virtual void Move(CardinalDirection dir)
         {
             #region Delta Coordinates
             Point delta = Point.Zero;
