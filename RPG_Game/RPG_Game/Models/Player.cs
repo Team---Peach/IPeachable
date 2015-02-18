@@ -84,7 +84,7 @@
             }
             else if (this.Turns - this.lastHeal < 20)
             {
-                string info = string.Format("Heal is on cooldown wait {0} more turns", this.Turns - this.lastHeal);
+                string info = string.Format("Heal is on cooldown wait {0} more turns", 20 - (this.Turns - this.lastHeal));
                 InfoPanel.AddInfo(info);
             }
             else
