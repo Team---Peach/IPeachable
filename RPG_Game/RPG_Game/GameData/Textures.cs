@@ -22,7 +22,7 @@ using Microsoft.Xna.Framework.Graphics;
         public static Texture2D ShadeBoss { get; set; }
         public static Texture2D Stranger { get; set; }
         public static Texture2D Spider { get; set; }
-        public static Texture2D AncientSwirdsman { get; set; }
+        public static Texture2D AncientSwordsman { get; set; }
         public static Texture2D Destructo { get; set; }
         public static Texture2D FinalBoss { get; set; }
 
@@ -81,7 +81,7 @@ using Microsoft.Xna.Framework.Graphics;
             Destructo = content.Load<Texture2D>("Enemies/Destructo");
             Stranger = content.Load<Texture2D>("Enemies/Stranger");
             FinalBoss = content.Load<Texture2D>("Enemies/FinalBoss");
-            AncientSwirdsman = content.Load<Texture2D>("Enemies/AncientSwirdsman");
+            AncientSwordsman = content.Load<Texture2D>("Enemies/AncientSwordsman");
 
             // Item textures load
             MinorHealthPotion = content.Load<Texture2D>("Items/Drink/MinorHealthPotion");
