@@ -215,6 +215,20 @@ namespace RPG_Game.Engine
                             this.player.Energy -= 100;
                             waitPlayerAction = false;
                         }
+
+                        // Space -> Use/Equip
+                        if (CheckKeys(Keys.Space))
+                        {
+                            if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Drink)
+                            {
+                                this.player.UseItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IDrinkable);
+                                this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = null;
+                            }
+                            if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Equip)
+                            {
+                                this.player.EquipItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable);
+                            }
+                        }
                         #endregion
                     }
                     else

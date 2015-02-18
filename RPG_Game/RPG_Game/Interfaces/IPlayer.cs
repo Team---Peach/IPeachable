@@ -7,12 +7,10 @@
     {
         int MaxHealth { get; set; }
         int MaxMana { get; set; }
-        IList<IEquipable> WearedItems { get; }
-        IList<IGameItem> InventoryItems { get; }
 
-        bool Fight(IEnemy enemy);
-        void WearItem(IEquipable itemToWear);
+        IDictionary<string, IEquipable> EquipedItems { get; }
+
+        void EquipItem(IEquipable itemToWear);
         void UseItem(IDrinkable itemToUse);
-        void TakeItem(IGameItem item);
     }
 }

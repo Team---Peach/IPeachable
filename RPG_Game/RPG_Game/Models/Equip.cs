@@ -5,9 +5,9 @@
     using Microsoft.Xna.Framework.Graphics;
     using RPG_Game.Enums;
 
-    public class Wear : GameItem, IEquipable
+    public class Equip : GameItem, IEquipable
     {
-        public Wear(Texture2D texture, IMap map, Point position, 
+        public Equip(Texture2D texture, IMap map, Point position, 
             string name, int attackBonus, int defenceBonus, int healthBonus, int manaBonus) 
             : base(texture, map, position, name)
         {

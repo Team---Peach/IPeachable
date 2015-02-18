@@ -38,9 +38,9 @@
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
     <Compile Include="GameData\Textures.cs" />
-    <Compile Include="Models\DroppedItems\Shield.cs" />
-    <Compile Include="Models\DroppedItems\Staff.cs" />
-    <Compile Include="Models\DroppedItems\Sword.cs" />
+    <Compile Include="Models\EquipableItems\Shield.cs" />
+    <Compile Include="Models\EquipableItems\Staff.cs" />
+    <Compile Include="Models\EquipableItems\Sword.cs" />
     <Compile Include="Models\Enemies\GoblinBoss.cs" />
     <Compile Include="Models\DrinkableItems\HealingPotion.cs" />
     <Compile Include="Models\DrinkableItems\MajorHealingPotion.cs" />
@@ -76,7 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Terrain.cs" />
     <Compile Include="Models\Tile.cs" />
-    <Compile Include="Models\Wear.cs" />
+    <Compile Include="Models\Equip.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -122,11 +122,7 @@
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="RPGClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Content\Items\Wear\" />
-    <Folder Include="Models\WearableItems\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -136,6 +132,9 @@
       <Project>{9016e42d-29ef-4f87-a8a8-3bc5fb8b48d5}</Project>
       <Name>RPG_GameContent</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RPGClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

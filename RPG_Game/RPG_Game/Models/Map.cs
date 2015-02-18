@@ -64,14 +64,6 @@
                     {
                         actor.Hit(this.Tiles[newLocation.X, newLocation.Y].Actor as IGameUnit);
                     }
-                    else if (this.Tiles[newLocation.X, newLocation.Y].Item != null)
-                    {
-                        (actor as Player).TakeItem(this.Tiles[newLocation.X, newLocation.Y].Item);
-                        this.Tiles[newLocation.X, newLocation.Y].Item = null;
-                        this[actor.Position].Actor = null;
-                        actor.Position = newLocation;
-                        this[newLocation].Actor = actor;
-                    }
                     else
                     {
                         this[actor.Position].Actor = null;
