@@ -10,8 +10,8 @@
         private const string GoblinBossName = "Goblin Boss";
         private const int GoblinBossHealth = 150;
         private const int GoblinBossMana = 0;
-        private const int GoblinBossAttack = 15;
-        private const int GoblinBossDefence = 20;
+        private const int GoblinBossAttack = 20;
+        private const int GoblinBossDefence = 30;
 
         private static List<string> dropList = new List<string>
         {

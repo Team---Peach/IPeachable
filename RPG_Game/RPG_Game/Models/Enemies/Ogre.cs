@@ -10,8 +10,8 @@
         private const string OgreName = "Ogre";
         private const int OgreHealth = 100;
         private const int OgreMana = 0;
-        private const int OgreAttack = 10;
-        private const int OgreDefence = 20;
+        private const int OgreAttack = 15;
+        private const int OgreDefence = 10;
 
         private static List<string> dropList = new List<string>
         {
