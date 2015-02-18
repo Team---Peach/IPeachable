@@ -24,7 +24,7 @@
   <Class Name="RPG_Game.GameData.Textures" Collapsed="true">
     <Position X="31.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAQAAAAQiAAAIAAAAAgSAAAIAAAAACAAAwAAAAA=</HashCode>
+      <HashCode>UCEEAAQI0CBSihQgIRAACAgSASAMEIEAADAAgyAAhQI=</HashCode>
       <FileName>GameData\Textures.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -37,7 +37,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Enemy" Collapsed="true">
-    <Position X="18.25" Y="3.25" Width="1.5" />
+    <Position X="16" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAQAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
@@ -144,21 +144,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Enemies.Goblin" Collapsed="true">
-    <Position X="20.5" Y="4.75" Width="1.5" />
+    <Position X="18" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAABAAAAAABAAAAAAEAAABAAAAAgAAAAAAAAAAgA=</HashCode>
       <FileName>Models\Enemies\Goblin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Enemies.GoblinBoss" Collapsed="true">
-    <Position X="16" Y="4.75" Width="1.5" />
+    <Position X="20" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAIAAAAgAAQAAEAAAAgQAAAAAAAAAAA=</HashCode>
       <FileName>Models\Enemies\GoblinBoss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Enemies.Ogre" Collapsed="true">
-    <Position X="18.25" Y="4.75" Width="1.5" />
+    <Position X="18" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACABAAAAAAAAAAAAAAAQAAAABAAAgAAAAAAAAAAAI=</HashCode>
       <FileName>Models\Enemies\Ogre.cs</FileName>
@@ -386,6 +386,83 @@
     <TypeIdentifier>
       <HashCode>AAAAAQAAQABAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Models\EquipableItems\EnchantedStaff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.Rat" Collapsed="true">
+    <Position X="18" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAEABAAAAAgAAAAAAAAAAgAAAAAAAAAQAA=</HashCode>
+      <FileName>Models\Enemies\Rat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.Spider" Collapsed="true">
+    <Position X="18" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgAAAAACgAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\Spider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.GoblinWarrior" Collapsed="true">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAAAAAAAAAAAgAAAAAIAAAAAAAAgAAAAAAEAAAAA=</HashCode>
+      <FileName>Models\Enemies\GoblinWarrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.OgreBoss" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\OgreBoss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.Shade" Collapsed="true">
+    <Position X="20" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAkAAAQAAAAAAAAAAAAAgAAAAAAAABAAA=</HashCode>
+      <FileName>Models\Enemies\Shade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.GoblinWarriorBoss" Collapsed="true">
+    <Position X="22" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABQAAAAAABAAAQAAAAAAAoAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\GoblinWarriorBoss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.Stranger" Collapsed="true">
+    <Position X="22" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAIAAAAAAAAAAAEACAAgAACAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\Stranger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.ShadeBoss" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAEAAgAAAAAAAAAICAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\ShadeBoss.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.AncientSwordsman" Collapsed="true">
+    <Position X="22" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAIAAAMAgAAQAAAAAAAAA=</HashCode>
+      <FileName>Models\Enemies\AncientSwordsman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.Destructo" Collapsed="true">
+    <Position X="24" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAgAAAAAAAAAAAEAAAAAIAgAAAAAAAgAAAA=</HashCode>
+      <FileName>Models\Enemies\Destructo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RPG_Game.Models.Enemies.FinalBoss" Collapsed="true">
+    <Position X="24" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAIAgAAAAAAAAAAAAgAAAAAAAAgAAA=</HashCode>
+      <FileName>Models\Enemies\FinalBoss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="RPG_Game.Interfaces.IDrawable" Collapsed="true">
