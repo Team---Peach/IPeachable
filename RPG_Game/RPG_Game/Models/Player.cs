@@ -19,13 +19,13 @@
 
         private IDictionary<string, IEquipable> equipedItems = new Dictionary<string, IEquipable>
         {
-            {"helmet", null},
-	        {"armor", null},
-	        {"gloves", null},
+            {"head", null},
+	        {"body", null},
+	        {"hand", null},
 	        {"weapon", null},
 	        {"shield", null},
-	        {"pants", null},
-	        {"boots", null}
+	        {"pant", null},
+	        {"feet", null}
         };
 
         public Player(Texture2D texture, IMap map, Point position)

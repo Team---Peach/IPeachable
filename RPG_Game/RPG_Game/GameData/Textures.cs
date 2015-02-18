@@ -17,10 +17,33 @@ using Microsoft.Xna.Framework.Graphics;
         public static Texture2D Rat { get; set; }
         public static Texture2D Spider { get; set; }
 
-        // Item textures
+        // Drinkable item textures
         public static Texture2D MinorHealthPotion { get; set; }
         public static Texture2D HealthPotion { get; set; }
         public static Texture2D MajorHealthPotion { get; set; }
+
+        // Equipable item textures
+        public static Texture2D Boots { get; set; }
+        public static Texture2D LeatherBoots { get; set; }
+        public static Texture2D EnchantedBoots { get; set; }
+        public static Texture2D LeatherGloves { get; set; }
+        public static Texture2D RunicGloves { get; set; }
+        public static Texture2D EnchantedGloves { get; set; }
+        public static Texture2D Hat { get; set; }
+        public static Texture2D Helmet { get; set; }
+        public static Texture2D EnchantedHelmet { get; set; }
+        public static Texture2D LeatherArmor { get; set; }
+        public static Texture2D IronArmor { get; set; }
+        public static Texture2D EnchantedArmor { get; set; }
+        public static Texture2D Pants { get; set; }
+        public static Texture2D LeatherPants { get; set; }
+        public static Texture2D EnchantedPants { get; set; }
+        public static Texture2D ShortSword { get; set; }
+        public static Texture2D Sword { get; set; }
+        public static Texture2D EnchantedSword { get; set; }
+        public static Texture2D ShortStaff { get; set; }
+        public static Texture2D Staff { get; set; }
+        public static Texture2D EnchantedStaff { get; set; }
 
         // Font textures
         public static SpriteFont SpriteFont { get; set; }

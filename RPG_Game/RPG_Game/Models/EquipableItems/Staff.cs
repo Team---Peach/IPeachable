@@ -10,15 +10,15 @@ using RPG_Game.Models;
 using RPG_Game.Enums;
 using RPG_Game.GameData;
 
-namespace RPG_Game.Models.DroppedItems
+namespace RPG_Game.Models.EquipableItems
 {
-    class Staff : Equip
+    class Staff : Weapon
     {
         private const string StaffName = "Staff";
-        private const int StaffAttackBonus = 10;
+        private const int StaffAttackBonus = 20;
         private const int StaffDefenceBonus = 0;
         private const int StaffHealthBonus = 0;
-        private const int StaffManaBonus = 10;
+        private const int StaffManaBonus = 50;
 
         public Staff(Texture2D texture, IMap map, Point position)
             : base(texture, map, position, StaffName, StaffAttackBonus, StaffDefenceBonus, StaffHealthBonus, StaffManaBonus)

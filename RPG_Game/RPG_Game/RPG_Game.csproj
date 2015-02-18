@@ -35,10 +35,31 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Models\EquipableItems\EnchantedStaff.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedSword.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedHelmet.cs" />
+    <Compile Include="Models\EquipableItems\Hat.cs" />
+    <Compile Include="Models\EquipableItems\Helmet.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedArmor.cs" />
+    <Compile Include="Models\EquipableItems\IronArmor.cs" />
+    <Compile Include="Models\EquipableItems\LeatherArmor.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedPants.cs" />
+    <Compile Include="Models\EquipableItems\LeatherPants.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedGloves.cs" />
+    <Compile Include="Models\EquipableItems\LeatherGloves.cs" />
+    <Compile Include="Models\EquipableItems\Boots.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedBoots.cs" />
+    <Compile Include="Models\EquipableItems\LeatherBoots.cs" />
+    <Compile Include="Models\Body.cs" />
+    <Compile Include="Models\EquipableItems\EnchantedShield.cs" />
+    <Compile Include="Models\EquipableItems\WoodenShield.cs" />
+    <Compile Include="Models\Feet.cs" />
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
     <Compile Include="GameData\Textures.cs" />
-    <Compile Include="Models\EquipableItems\Shield.cs" />
+    <Compile Include="Models\Hand.cs" />
+    <Compile Include="Models\Head.cs" />
+    <Compile Include="Models\EquipableItems\LeatherShield.cs" />
     <Compile Include="Models\EquipableItems\Staff.cs" />
     <Compile Include="Models\EquipableItems\Sword.cs" />
     <Compile Include="Models\Enemies\GoblinBoss.cs" />
@@ -72,11 +93,18 @@
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Enemies\Ogre.cs" />
     <Compile Include="Models\Enemies\Goblin.cs" />
+    <Compile Include="Models\Pant.cs" />
+    <Compile Include="Models\EquipableItems\Pants.cs" />
     <Compile Include="RPGMain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Terrain.cs" />
     <Compile Include="Models\Tile.cs" />
     <Compile Include="Models\Equip.cs" />
+    <Compile Include="Models\Shield.cs" />
+    <Compile Include="Models\Weapon.cs" />
+    <Compile Include="Models\EquipableItems\RunicGloves.cs" />
+    <Compile Include="Models\EquipableItems\ShortStaff.cs" />
+    <Compile Include="Models\EquipableItems\ShortSword.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -86,6 +114,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Enemies\AncientSwordsman.png" />
+    <Content Include="Content\Enemies\Destructo.png" />
+    <Content Include="Content\Enemies\FinalBoss.png" />
+    <Content Include="Content\Enemies\GoblinWarrior.png" />
+    <Content Include="Content\Enemies\GoblinWarriorBoss.png" />
+    <Content Include="Content\Enemies\OgreBoss.png" />
+    <Content Include="Content\Enemies\Shade.png" />
+    <Content Include="Content\Enemies\ShadeBoss.png" />
+    <Content Include="Content\Enemies\Stranger.png" />
+    <Content Include="Content\Items\Equip\Boots.png" />
+    <Content Include="Content\Items\Equip\EnchantedArmor.png" />
+    <Content Include="Content\Items\Equip\EnchantedBoots.png" />
+    <Content Include="Content\Items\Equip\EnchantedGloves.png" />
+    <Content Include="Content\Items\Equip\EnchantedHelmet.png" />
+    <Content Include="Content\Items\Equip\EnchantedPants.png" />
+    <Content Include="Content\Items\Equip\EnchantedShield.png" />
+    <Content Include="Content\Items\Equip\EnchantedStaff.png" />
+    <Content Include="Content\Items\Equip\EnchantedSword.png" />
+    <Content Include="Content\Items\Equip\Hat.png" />
+    <Content Include="Content\Items\Equip\Helmet.png" />
+    <Content Include="Content\Items\Equip\IronArmor.png" />
+    <Content Include="Content\Items\Equip\LeatherArmor.png" />
+    <Content Include="Content\Items\Equip\LeatherGloves.png" />
+    <Content Include="Content\Items\Equip\LeatherPants.png" />
+    <Content Include="Content\Items\Equip\LeatherShield.png" />
+    <Content Include="Content\Items\Equip\LetherBoots.png" />
+    <Content Include="Content\Items\Equip\Pants.png" />
+    <Content Include="Content\Items\Equip\RunicGloves.png" />
+    <Content Include="Content\Items\Equip\ShortStaff.png" />
+    <Content Include="Content\Items\Equip\ShortSword.png" />
+    <Content Include="Content\Items\Equip\Staff.png" />
+    <Content Include="Content\Items\Equip\Sword.png" />
+    <Content Include="Content\Items\Equip\WoodenShield.png" />
     <Content Include="Content\Wall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -121,9 +182,7 @@
     </Content>
     <Content Include="Icon.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Items\Wear\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
