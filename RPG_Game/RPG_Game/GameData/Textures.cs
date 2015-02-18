@@ -44,6 +44,9 @@ using Microsoft.Xna.Framework.Graphics;
         public static Texture2D ShortStaff { get; set; }
         public static Texture2D Staff { get; set; }
         public static Texture2D EnchantedStaff { get; set; }
+        public static Texture2D LeatherShield { get; set; }
+        public static Texture2D WoodenShield { get; set; }
+        public static Texture2D EnchantedShield { get; set; }
 
         // Font textures
         public static SpriteFont SpriteFont { get; set; }
@@ -66,6 +69,32 @@ using Microsoft.Xna.Framework.Graphics;
             MinorHealthPotion = content.Load<Texture2D>("Items/Drink/MinorHealthPotion");
             HealthPotion = content.Load<Texture2D>("Items/Drink/HealthPotion");
             MajorHealthPotion = content.Load<Texture2D>("Items/Drink/MajorHealthPotion");
+
+            // Equipable item textures load
+            Boots = content.Load<Texture2D>("Items/Equip/Boots");
+            EnchantedArmor = content.Load<Texture2D>("Items/Equip/EnchantedArmor");
+            EnchantedBoots = content.Load<Texture2D>("Items/Equip/EnchantedBoots");
+            EnchantedGloves = content.Load<Texture2D>("Items/Equip/EnchantedGloves");
+            EnchantedHelmet = content.Load<Texture2D>("Items/Equip/EnchantedHelmet");
+            EnchantedPants = content.Load<Texture2D>("Items/Equip/EnchantedPants");
+            EnchantedStaff = content.Load<Texture2D>("Items/Equip/EnchantedStaff");
+            EnchantedSword = content.Load<Texture2D>("Items/Equip/EnchantedSword");
+            Hat = content.Load<Texture2D>("Items/Equip/Hat");
+            Helmet = content.Load<Texture2D>("Items/Equip/Helmet");
+            IronArmor = content.Load<Texture2D>("Items/Equip/IronArmor");
+            LeatherArmor = content.Load<Texture2D>("Items/Equip/LeatherArmor");
+            LeatherPants = content.Load<Texture2D>("Items/Equip/LeatherPants");
+            LeatherBoots = content.Load<Texture2D>("Items/Equip/LeatherBoots");
+            LeatherGloves = content.Load<Texture2D>("Items/Equip/LeatherGloves");
+            LeatherShield = content.Load<Texture2D>("Items/Equip/LeatherShield");
+            EnchantedShield = content.Load<Texture2D>("Items/Equip/EnchantedShield");
+            Pants = content.Load<Texture2D>("Items/Equip/Pants");
+            RunicGloves = content.Load<Texture2D>("Items/Equip/RunicGloves");
+            ShortStaff = content.Load<Texture2D>("Items/Equip/ShortStaff");
+            ShortSword = content.Load<Texture2D>("Items/Equip/ShortSword");
+            Staff = content.Load<Texture2D>("Items/Equip/Staff");
+            Sword = content.Load<Texture2D>("Items/Equip/Sword");
+            WoodenShield = content.Load<Texture2D>("Items/Equip/WoodenShield");
 
             // Font textures load
             SpriteFont = content.Load<SpriteFont>("GameFont");
