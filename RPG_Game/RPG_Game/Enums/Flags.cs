@@ -6,8 +6,6 @@ namespace RPG_Game.Enums
     {
         IsPlayerControl,
         IsBlocked,
-        IsItem,
-        IsEnemy,
         None
     }
 }

@@ -25,7 +25,10 @@ namespace RPG_Game.Engine
         SpriteBatch spriteBatch;
         private IPlayer player;
         private IMap map;
+        private Texture2D console;
+        private InfoPanel infoPanel;
         private static List<GameUnit> unitList;
+        private static List<GameUnit> unitsToRemoveList;
         private bool waitPlayerAction = false;
 
         // The previous (old) and the current (new)
@@ -50,6 +53,7 @@ namespace RPG_Game.Engine
 
             this.oldKBState = new KeyboardState();
             unitList = new List<GameUnit>();
+            unitsToRemoveList = new List<GameUnit>();
 
             base.Initialize();
         }
@@ -57,10 +61,15 @@ namespace RPG_Game.Engine
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            console = new Texture2D(GraphicsDevice, 1, 1);
+
+            infoPanel = new InfoPanel(console);
+
             Textures.LoadTextures(Content);
 
             Point visibleTiles = new Point(
-                (SCREEN_HEIGHT - 10) / Map.TILE_SIZE,
+                (SCREEN_HEIGHT - 170) / Map.TILE_SIZE,
                 (SCREEN_WIDTH - 10) / Map.TILE_SIZE);
 
             this.map = new Map(
@@ -88,12 +97,35 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
+            if (this.player.Health <= 0)
+            {
+                // TODO
+                throw new ArgumentException("Game Over");
+            }
+
             if (!waitPlayerAction)
             {
                 foreach (GameUnit unit in unitList)
                 {
                     unit.Energy += unit.Speed;
                 }
+            }
+
+            
+            foreach (GameUnit unit in unitList)
+            {
+                if (unit.Health <= 0)
+                {
+                    string item = (unit as Enemy).ItemToDrop();
+                    Tools.PlaceObjectOnMap(item, this.map, unit.Position);
+                    this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
+                    unitsToRemoveList.Add(unit);
+                }
+            }
+
+            foreach (var unitForRemove in unitsToRemoveList)
+            {
+                unitList.Remove(unitForRemove);
             }
 
             // Sort units in list by their energy.
@@ -192,6 +224,8 @@ namespace RPG_Game.Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             this.map.Draw(spriteBatch, player.Position);
+
+            this.infoPanel.Draw(spriteBatch);
 
             base.Draw(gameTime);
         }

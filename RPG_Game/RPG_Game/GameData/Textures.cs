@@ -22,6 +22,9 @@ using Microsoft.Xna.Framework.Graphics;
         public static Texture2D HealthPotion { get; set; }
         public static Texture2D MajorHealthPotion { get; set; }
 
+        // Font textures
+        public static SpriteFont SpriteFont { get; set; }
+
         public static void LoadTextures(ContentManager content)
         {
             // Base textures load
@@ -41,6 +44,8 @@ using Microsoft.Xna.Framework.Graphics;
             HealthPotion = content.Load<Texture2D>("Items/Drink/HealthPotion");
             MajorHealthPotion = content.Load<Texture2D>("Items/Drink/MajorHealthPotion");
 
+            // Font textures load
+            SpriteFont = content.Load<SpriteFont>("GameFont");
         }
     }
 }

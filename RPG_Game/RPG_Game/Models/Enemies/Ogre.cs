@@ -2,7 +2,6 @@
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using RPG_Game.Enums;
     using RPG_Game.Interfaces;
     using System.Collections.Generic;
 

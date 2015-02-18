@@ -77,6 +77,14 @@
                 "minorHP");
         }
 
+        /// <summary>
+        /// Randomly check every tile on the map in given range (min - max distance) and place the object if this position is empty
+        /// </summary>
+        /// <param name="map">Current map</param>
+        /// <param name="count">Number of objects from the same type we want to place on the map</param>
+        /// <param name="minDistance">Minimum distance from Point.Zero</param>
+        /// <param name="maxDistance">Maximum distance from Point.Zero</param>
+        /// <param name="name">The name of the object we want to place</param>
         private static void GenerateObject(IMap map, int count, int minDistance, int maxDistance, string name)
         {
             int objectCount = count;
@@ -89,7 +97,9 @@
                         if (map.CheckTile(new Point(i, j)) 
                             && objectCount != 0 
                             && (i > minDistance || j > minDistance)
-                            && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None))
+                            && map.Tiles[i,j].Terrain.Flags.HasFlag(Flags.None)
+                            && map.Tiles[i,j].Actor == null
+                            && map.Tiles[i, j].Item == null)
                         {
                             int next = RNG.Next(0, 100);
                             if (next < 4)
@@ -103,6 +113,12 @@
             }
         }
 
+        /// <summary>
+        /// Place specific GameObject at given position on the map
+        /// </summary>
+        /// <param name="name">String with the name of the GameObject that will be placed on the map</param>
+        /// <param name="map">Current map</param>
+        /// <param name="point">the tail position on the map</param>
         public static void PlaceObjectOnMap(string name, IMap map, Point point)
         {
             switch (name)
@@ -110,24 +126,20 @@
                 case "goblin":
                     Goblin goblin = new Goblin(Textures.Goblin, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblin);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "goblinBoss":
                     GoblinBoss goblinBoss = new GoblinBoss(Textures.GoblinBoss, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinBoss);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "ogre":
                     Ogre ogre = new Ogre(Textures.Ogre, map, point);
                     RPG_Game.Engine.GameMain.AddUnitToList(ogre);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsEnemy;
                     break;
 
                 case "minorHP":
                     MinorHealingPotion minorHP = new MinorHealingPotion(Textures.MinorHealthPotion, map, point);
-                    map.Tiles[point.X, point.Y].Terrain.Flags = Flags.IsItem;
                     break;
 
                 default:

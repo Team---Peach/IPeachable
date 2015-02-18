@@ -10,5 +10,6 @@ namespace RPG_Game.Interfaces
         int Energy { get; set; }
         int Speed { get; set; }
         void Move(CardinalDirection dir);
+        void Hit(IGameUnit target);
     }
 }

@@ -7,7 +7,6 @@
     public interface IGameObject : IDrawable
     {
         string Name { get; set; }
-        Flags Flags { get; set; }
         Point Position { get; set; }
 
         bool Spawn(IMap map, Point position);

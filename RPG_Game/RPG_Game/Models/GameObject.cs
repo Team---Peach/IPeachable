@@ -9,20 +9,18 @@
     public abstract class GameObject : IGameObject
     {
         private string name;
-        private Flags flags;
         private readonly Texture2D texture;
         private Point position;
         private IMap map;
 
-        protected GameObject(Texture2D texture, Flags flags, string name)
+        protected GameObject(Texture2D texture, string name)
         {
             this.Name = name;
             this.texture = texture;
-            this.Flags = flags;
         }
 
-        protected GameObject(Texture2D texture, Flags flags, IMap map, Point position, string name)
-            : this(texture, flags, name)
+        protected GameObject(Texture2D texture, IMap map, Point position, string name)
+            : this(texture, name)
         {
             Spawn(map, position);
         }
@@ -48,12 +46,6 @@
             set { this.position = value; }
         }
 
-        public Flags Flags
-        {
-            get { return this.flags; }
-            set { this.flags = value; }
-        }
-
         public Texture2D Texture
         {
             get { return this.texture; }
@@ -67,19 +59,7 @@
 
         #endregion
 
-        public bool Spawn(IMap map, Point position)
-        {
-            if (map.CheckTile(position))
-            {
-                map[position].Actor = this;
-
-                this.Map = map;
-                this.Position = position;
-
-                return true;
-            }
-
-            return false;
-        }
+        public abstract bool Spawn(IMap map, Point position);
+        
     }
 }

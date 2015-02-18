@@ -12,9 +12,9 @@ using RPG_Game.GameData;
 
 namespace RPG_Game.Models.DroppedItems
 {
-    class Staff : GameItem, IWearable
+    class Staff : GameItem, IEquipable
     {
-      public Staff(int attackBonuc, int defenceBonus, int healthBonus, int manaBonus, Flags flags, 
+      public Staff(int attackBonuc, int defenceBonus, int healthBonus, int manaBonus, 
           Texture2D texture, IMap map, Point position, string name) 
             : base(texture, map, position, name)
         {
@@ -22,7 +22,6 @@ namespace RPG_Game.Models.DroppedItems
             this.DefenceBonus = defenceBonus;
             this.HealthBonus = healthBonus;
             this.ManaBonus = manaBonus;
-            this.Flags = Flags.IsItem;
         }
 
         public int AttackBonus { get; set; }

@@ -7,7 +7,7 @@
 
     public class GoblinBoss : Enemy
     {
-        private const string GoblinBossName = "GoblinBoss";
+        private const string GoblinBossName = "Goblin Boss";
         private const int GoblinBossHealth = 150;
         private const int GoblinBossMana = 0;
         private const int GoblinBossAttack = 15;
