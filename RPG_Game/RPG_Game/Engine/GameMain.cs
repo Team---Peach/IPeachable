@@ -110,6 +110,22 @@ namespace RPG_Game.Engine
                     unit.Energy += unit.Speed;
                 }
             }
+			
+            foreach (GameUnit unit in unitList)
+            {
+                if (unit.Health <= 0)
+                {
+                    string item = (unit as Enemy).ItemToDrop();
+                    Tools.PlaceObjectOnMap(item, this.map, unit.Position);
+                    this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
+                    unitsToRemoveList.Add(unit);
+                }
+            }
+
+            foreach (var unitForRemove in unitsToRemoveList)
+            {
+                unitList.Remove(unitForRemove);
+            }
 
             
             foreach (GameUnit unit in unitList)

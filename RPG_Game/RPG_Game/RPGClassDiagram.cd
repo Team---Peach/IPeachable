@@ -3,7 +3,11 @@
   <Class Name="RPG_Game.Engine.GameMain">
     <Position X="16" Y="0.5" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>AAQAMEAAgAAAAwBAAgFAAQAgAgAgAggBAQAAAAAAAAQ=</HashCode>
+=======
+      <HashCode>AAQAEEAAAAAAAwBAAAFAAQAgAgAgAggBAQAAAAAAAAQ=</HashCode>
+>>>>>>> origin/master
       <FileName>Engine\GameMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -64,7 +68,11 @@
   <Class Name="RPG_Game.Models.GameUnit">
     <Position X="10" Y="5.5" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>AAAACAAAAIAAAAAAAgMEAAABAIAAAAAAAAAAIgAAAAg=</HashCode>
+=======
+      <HashCode>AAAACAAAAIAAAAAAAAEEAAABAIAAAAAAAAAAIgAAAAg=</HashCode>
+>>>>>>> origin/master
       <FileName>Models\GameUnit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -146,7 +154,11 @@
   <Interface Name="RPG_Game.Interfaces.IGameUnit">
     <Position X="0.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
+<<<<<<< HEAD
       <HashCode>AAAACAAAAIAAAAAAAAIEAAABAIAAAAAAAAAAIgAAAAA=</HashCode>
+=======
+      <HashCode>AAAACAAAAIAAAAAAAAAEAAABAIAAAAAAAAAAIgAAAAA=</HashCode>
+>>>>>>> origin/master
       <FileName>Interfaces\IGameUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
