@@ -61,6 +61,7 @@
         {
             if (this.InBattle == true)
             {
+                // Checks if the player and the enemy are in same line
                 if (this.Position.X == this.Player.Position.X)
                 {
                     if (this.Position.Y > this.player.Position.Y)
@@ -73,7 +74,7 @@
                     }
 
                 }
-
+                // Checks if enemy is nother to the person
                 if (this.Position.X > this.Player.Position.X)
                 {
                     if (this.Position.Y == this.player.Position.Y)
@@ -90,7 +91,7 @@
                     }
 
                 }
-
+                // Checks if enemy is souther to player
                 if (this.Position.X < this.Player.Position.X)
                 {
                     if (this.Position.Y == this.player.Position.Y)
@@ -155,6 +156,7 @@
             {
                 base.Move(dir);
             }
+
             
         }
     }
