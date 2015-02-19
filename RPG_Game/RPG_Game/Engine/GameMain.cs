@@ -115,6 +115,7 @@ namespace RPG_Game.Engine
                 {
                     if (unit is IPlayer)
                     {
+                        // TODO some end screen
                         InfoPanel.AddInfo("Game Over! You are dead");
                     }
                     else

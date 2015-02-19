@@ -297,7 +297,7 @@ namespace RPG_Game.GameData
             "minorHP",
             "helmet",
             "ironArmor",
-            "leather shield"
+            "leatherShield"
         };
 
         // Goblin Boss
@@ -345,8 +345,8 @@ namespace RPG_Game.GameData
         public static readonly List<string> ShadeDropList = new List<string>
         {
             "majorHP",
-            "leather boots",
-            "leather pants",
+            "leatherBoots",
+            "leatherPants",
             "enchantedStaff"
         };
 
