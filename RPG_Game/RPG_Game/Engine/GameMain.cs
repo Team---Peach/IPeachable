@@ -111,6 +111,7 @@ namespace RPG_Game.Engine
 			
             foreach (GameUnit unit in unitList)
             {
+                (unit as Enemy).StartBattleIfInRange(this.map);
                 if (unit.Health <= 0)
                 {
                     if (unit is IPlayer)

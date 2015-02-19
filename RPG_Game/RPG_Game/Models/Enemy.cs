@@ -12,12 +12,14 @@
         private readonly List<string> dropList;
         private bool inBattle = false;
         private IPlayer player;
+        private int aggresion;
 
         public Enemy(Texture2D texture, IMap map, Point position,
-            string name, int health, int mana, int attack, int defence, List<string> dropList)
+            string name, int health, int mana, int attack, int defence, List<string> dropList, int aggresion)
             : base(texture, map, position, name, health, mana, attack, defence)
         {
             this.dropList = dropList;
+            this.Agression = aggresion;
         }
 
         public List<string> DropList
@@ -43,6 +45,15 @@
             set
             {
                 this.player = value;
+            }
+        }
+
+        public int Agression 
+        {
+            get { return this.aggresion; }
+            set
+            {
+                this.aggresion = value;
             }
         }
 
@@ -155,8 +166,30 @@
             {
                 base.Move(dir);
             }
-
             
+        }
+        public void StartBattleIfInRange(IMap map)
+        {
+            int startX = this.Position.X - this.Agression;
+            int startY = this.Position.Y - this.Agression;
+            for (int x = startX; x < (aggresion * 2) + 1; x++)
+            {
+                for (int y = startY; y < (aggresion * 2) + 1; y++)
+                {
+                    if (map.Tiles[x, y].Actor is Player)
+                    {
+                        this.inBattle = true;
+                        this.player = map.Tiles[x,y].Actor as Player;
+                    }
+                    if (this.inBattle)
+                    {
+                        if (this.Map.Tiles[x, y].Actor is Enemy)
+                        {
+                            (map.Tiles[x, y].Actor as Enemy).inBattle = true;
+                        }
+                    }
+                }
+            }
         }
     }
 }
