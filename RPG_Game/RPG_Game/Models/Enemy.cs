@@ -177,20 +177,16 @@
             {
                 for (int y = startY; y < (aggresion * 2) + 1; y++)
                 {
-                    if (x < 0 || x > 1024 || y < 0 || y > 640)
-                    {
-                        continue;
-                    }
                     if (map.Tiles[x, y].Actor is Player)
                     {
                         this.inBattle = true;
-                        this.player = map.Tiles[x,y].Actor as Player;
+                        this.player = map.Tiles[x, y].Actor as Player;
                     }
                     if (this.inBattle)
                     {
                         if (this.Map.Tiles[x, y].Actor is Enemy)
                         {
-                            (map.Tiles[x, y].Actor as Enemy).inBattle = true;
+                            (map.Tiles[x,y].Actor as Enemy).inBattle = true;
                         }
                     }
                 }
