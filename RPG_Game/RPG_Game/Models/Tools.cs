@@ -252,7 +252,7 @@
                         ObjectsConstants.GoblinBossAttack,
                         ObjectsConstants.GoblinBossDefence,
                         ObjectsConstants.GoblinBossDropList,
-                        ObjectsConstants.GoblinAgression);
+                        ObjectsConstants.GoblinBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinBoss);
                     break;
                 case "goblinWarrior":
@@ -263,7 +263,7 @@
                         ObjectsConstants.GoblinWarriorAttack,
                         ObjectsConstants.GoblinWarriorDefence,
                         ObjectsConstants.GoblinWarriorDropList,
-                        ObjectsConstants.GoblinAgression);
+                        ObjectsConstants.GoblinWarriorAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinWarrior);
                     break;
                 case "ogreBoss":
@@ -296,7 +296,7 @@
                         ObjectsConstants.GoblinWarriorBossAttack,
                         ObjectsConstants.GoblinWarriorBossDefence,
                         ObjectsConstants.GoblinWarriorBossDropList,
-                        ObjectsConstants.GoblinWarriorAgression);
+                        ObjectsConstants.GoblinWarriorBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinWarriorBoss);
                     break;
                 case "stranger":
