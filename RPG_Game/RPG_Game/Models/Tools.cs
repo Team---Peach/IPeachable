@@ -207,7 +207,8 @@
                         ObjectsConstants.RatMana,
                         ObjectsConstants.RatAttack,
                         ObjectsConstants.RatDefence,
-                        ObjectsConstants.RatDropList);
+                        ObjectsConstants.RatDropList,
+                        ObjectsConstants.RatAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(rat);
                     break;
                 case "spider":
@@ -217,7 +218,8 @@
                         ObjectsConstants.SpiderMana,
                         ObjectsConstants.SpiderAttack,
                         ObjectsConstants.SpiderDefence,
-                        ObjectsConstants.SpiderDropList);
+                        ObjectsConstants.SpiderDropList,
+                        ObjectsConstants.SpiderAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(spider);
                     break;
                 case "goblin":
@@ -227,7 +229,8 @@
                         ObjectsConstants.GoblinMana,
                         ObjectsConstants.GoblinAttack,
                         ObjectsConstants.GoblinDefence,
-                        ObjectsConstants.GoblinDropList);
+                        ObjectsConstants.GoblinDropList,
+                        ObjectsConstants.GoblinAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblin);
                     break;
                 case "ogre":
@@ -237,7 +240,8 @@
                         ObjectsConstants.OgreMana,
                         ObjectsConstants.OgreAttack,
                         ObjectsConstants.OgreDefence,
-                        ObjectsConstants.OgreDropList);
+                        ObjectsConstants.OgreDropList,
+                        ObjectsConstants.OgreAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(ogre);
                     break;
                 case "goblinBoss":
@@ -247,7 +251,8 @@
                         ObjectsConstants.GoblinBossMana,
                         ObjectsConstants.GoblinBossAttack,
                         ObjectsConstants.GoblinBossDefence,
-                        ObjectsConstants.GoblinBossDropList);
+                        ObjectsConstants.GoblinBossDropList,
+                        ObjectsConstants.GoblinBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinBoss);
                     break;
                 case "goblinWarrior":
@@ -257,7 +262,8 @@
                         ObjectsConstants.GoblinWarriorMana,
                         ObjectsConstants.GoblinWarriorAttack,
                         ObjectsConstants.GoblinWarriorDefence,
-                        ObjectsConstants.GoblinWarriorDropList);
+                        ObjectsConstants.GoblinWarriorDropList,
+                        ObjectsConstants.GoblinWarriorAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinWarrior);
                     break;
                 case "ogreBoss":
@@ -267,7 +273,8 @@
                         ObjectsConstants.OgreBossMana,
                         ObjectsConstants.OgreBossAttack,
                         ObjectsConstants.OgreBossDefence,
-                        ObjectsConstants.OgreBossDropList);
+                        ObjectsConstants.OgreBossDropList,
+                        ObjectsConstants.OgreBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(ogreBoss);
                     break;
                 case "shade":
@@ -277,7 +284,8 @@
                         ObjectsConstants.ShadeMana,
                         ObjectsConstants.ShadeAttack,
                         ObjectsConstants.ShadeDefence,
-                        ObjectsConstants.ShadeDropList);
+                        ObjectsConstants.ShadeDropList,
+                        ObjectsConstants.ShadeAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(shade);
                     break;
                 case "goblinWarriorBoss":
@@ -287,7 +295,8 @@
                         ObjectsConstants.GoblinWarriorBossMana,
                         ObjectsConstants.GoblinWarriorBossAttack,
                         ObjectsConstants.GoblinWarriorBossDefence,
-                        ObjectsConstants.GoblinWarriorBossDropList);
+                        ObjectsConstants.GoblinWarriorBossDropList,
+                        ObjectsConstants.GoblinWarriorBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(goblinWarriorBoss);
                     break;
                 case "stranger":
@@ -297,7 +306,8 @@
                         ObjectsConstants.StrangerMana,
                         ObjectsConstants.StrangerAttack,
                         ObjectsConstants.StrangerDefence,
-                        ObjectsConstants.StrangerDropList);
+                        ObjectsConstants.StrangerDropList,
+                        ObjectsConstants.StrangerAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(stranger);
                     break;
                 case "shadeBoss":
@@ -307,7 +317,8 @@
                         ObjectsConstants.ShadeBossMana,
                         ObjectsConstants.ShadeBossAttack,
                         ObjectsConstants.ShadeBossDefence,
-                        ObjectsConstants.ShadeBossDropList);
+                        ObjectsConstants.ShadeBossDropList,
+                        ObjectsConstants.ShadeBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(shadeBoss);
                     break;
                 case "ancientSwordsman":
@@ -317,7 +328,8 @@
                         ObjectsConstants.AncientSwordsmanMana,
                         ObjectsConstants.AncientSwordsmanAttack,
                         ObjectsConstants.AncientSwordsmanDefence,
-                        ObjectsConstants.AncientSwordsmanDropList);
+                        ObjectsConstants.AncientSwordsmanDropList,
+                        ObjectsConstants.AncientSwordsmanAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(ancientSwordsman);
                     break;
                 case "destructo":
@@ -327,7 +339,8 @@
                         ObjectsConstants.DestructoMana,
                         ObjectsConstants.DestructoAttack,
                         ObjectsConstants.DestructoDefence,
-                        ObjectsConstants.DestructoDropList);
+                        ObjectsConstants.DestructoDropList,
+                        ObjectsConstants.DestructoAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(destructo);
                     break;
                 case "finalBoss":
@@ -337,7 +350,8 @@
                         ObjectsConstants.FinalBossMana,
                         ObjectsConstants.FinalBossAttack,
                         ObjectsConstants.FinalBossDefence,
-                        ObjectsConstants.FinalBossDropList);
+                        ObjectsConstants.FinalBossDropList,
+                        ObjectsConstants.FinalBossAgression);
                     RPG_Game.Engine.GameMain.AddUnitToList(finalBoss);
                     break;
                 #endregion
