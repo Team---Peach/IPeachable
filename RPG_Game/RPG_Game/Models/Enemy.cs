@@ -177,6 +177,10 @@
             {
                 for (int y = startY; y < (aggresion * 2) + 1; y++)
                 {
+                    if (x < 0 || x > 1024 || y < 0 || y > 640)
+                    {
+                        continue;
+                    }
                     if (map.Tiles[x, y].Actor is Player)
                     {
                         this.inBattle = true;

@@ -251,7 +251,7 @@ namespace RPG_Game.GameData
         public const int RatMana = 0;
         public const int RatAttack = 5;
         public const int RatDefence = 10;
-        public const int RatAgression = 0;
+        public const int RatAgression = 2;
         public static readonly List<string> RatDropList = new List<string>()
         {
             "minorHP",
