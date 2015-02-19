@@ -30,7 +30,7 @@
             }
         }
 
-        public bool InBattle 
+        public bool InBattle
         {
             get { return this.inBattle; }
             set
@@ -39,7 +39,7 @@
             }
         }
 
-        public IPlayer Player 
+        public IPlayer Player
         {
             get { return this.player; }
             set
@@ -48,7 +48,7 @@
             }
         }
 
-        public int Agression 
+        public int Agression
         {
             get { return this.aggresion; }
             set
@@ -166,16 +166,16 @@
             {
                 base.Move(dir);
             }
-            
+
         }
         public void StartBattleIfInRange(IMap map)
         {
             int startX = this.Position.X - this.Agression;
             int startY = this.Position.Y - this.Agression;
 
-            for (int x = startX; x < (aggresion * 2) + 1; x++)
+            for (int x = startX; x < startX + (aggresion * 2) + 1; x++)
             {
-                for (int y = startY; y < (aggresion * 2) + 1; y++)
+                for (int y = startY; y < startY + (aggresion * 2) + 1; y++)
                 {
                     if (map.Tiles[x, y].Actor is Player)
                     {
@@ -183,11 +183,31 @@
                         this.player = map.Tiles[x, y].Actor as Player;
                     }
                     if (this.inBattle)
+                    if (x > 0 && x < 40 && y > 0 && y < 40)
                     {
-                        if (this.Map.Tiles[x, y].Actor is Enemy)
+                        if (this.inBattle)
+                        {
+                            if (map.Tiles[x, y].Actor is Enemy)
+                            {
+                                (map.Tiles[x, y].Actor as Enemy).inBattle = true;
+                                (map.Tiles[x, y].Actor as Enemy).Player = this.Player;
+                            }
+                        }
+                        if (map.Tiles[x, y].Actor is Player)
+                        {
+                            this.inBattle = true;
+                            this.player = map.Tiles[x, y].Actor as Player;
+                        }
+                        if (map.Tiles[x, y].Actor is Enemy)
                         {
                             (map.Tiles[x,y].Actor as Enemy).inBattle = true;
+                            if ((map.Tiles[x, y].Actor as Enemy).InBattle)
+                            {
+                                this.inBattle = true;
+                                this.player = (map.Tiles[x, y].Actor as Enemy).Player;
+                            }
                         }
+                        
                     }
                 }
             }
