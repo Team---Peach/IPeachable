@@ -9,14 +9,14 @@
     {
 
         public Equip(Texture2D texture, IMap map, Point position, 
-            string name, int attackBonus, int defenceBonus, int healthBonus, int manaBonus, string place) 
+            string name, int attackBonus, int defenceBonus, int healthBonus, int manaBonus, string slot) 
             : base(texture, map, position, name)
         {
             this.AttackBonus = attackBonus;
             this.DefenceBonus = defenceBonus;
             this.HealthBonus = healthBonus;
             this.ManaBonus = manaBonus;
-            this.Place = place;
+            this.Slot = slot;
         }
 
         public int AttackBonus { get; set; }
@@ -27,6 +27,6 @@
 
         public int ManaBonus { get; set; }
 
-        public string Place { get; set; }
+        public string Slot { get; set; }
     }
 }

@@ -113,7 +113,17 @@
 
         public void Hit(IGameUnit target)
         {
-            int damage = (this.Attack - (this.Attack * (target.Defence / 100)));
+            int damage = 0;
+            if (this is IPlayer)
+            {
+                // TODO add attack bonus
+                damage = this.Attack- (this.Attack * (target.Defence / 100));
+            }
+            else
+            {
+                // TODO add defence bonus
+                damage = this.Attack - (this.Attack * (target.Defence / 100));
+            }
             target.Health -= damage;
             string info = GenerateInfoText(damage, target);
             InfoPanel.AddInfo(info);

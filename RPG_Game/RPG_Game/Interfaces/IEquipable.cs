@@ -2,7 +2,7 @@
 {
     public interface IEquipable : IGameItem
     {
-        string Place { get; set; }
+        string Slot { get; set; }
         int AttackBonus { get; set; }
         int DefenceBonus { get; set; }
         int HealthBonus { get; set; }

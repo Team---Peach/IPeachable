@@ -7,13 +7,13 @@
     using System;
     using System.Collections.Generic;
 
-    public abstract class Enemy : GameUnit, IEnemy
+    public class Enemy : GameUnit, IEnemy
     {
         private readonly List<string> dropList;
         private bool inBattle = false;
         private IPlayer player;
 
-        protected Enemy(Texture2D texture, IMap map, Point position,
+        public Enemy(Texture2D texture, IMap map, Point position,
             string name, int health, int mana, int attack, int defence, List<string> dropList)
             : base(texture, map, position, name, health, mana, attack, defence)
         {
@@ -52,8 +52,7 @@
         /// <returns>The name of the item as a string</returns>
         public string ItemToDrop()
         {
-            //TODO
-            return this.dropList[0];
+            return this.DropList[Tools.RandomDrop(this.DropList.Count)];
         }
 
         // Enemy starts tracing the player when in battle

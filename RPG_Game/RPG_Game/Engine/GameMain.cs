@@ -99,8 +99,8 @@ namespace RPG_Game.Engine
 
             if (this.player.Health <= 0)
             {
-                // TODO
-                throw new ArgumentException("Game Over");
+                // TODO some end screen
+                InfoPanel.AddInfo("Game Over! You are dead");
             }
 
             if (!waitPlayerAction)
@@ -119,6 +119,7 @@ namespace RPG_Game.Engine
                     Tools.PlaceObjectOnMap(item, this.map, unit.Position);
                     this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
                     unitsToRemoveList.Add(unit);
+                    InfoPanel.AddInfo(unit.Name + " is dead!");
                 }
             }
 
@@ -225,7 +226,11 @@ namespace RPG_Game.Engine
                             }
                             if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Equip)
                             {
-                                this.player.EquipItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable);
+                                IEquipable itemToEquip =
+                                    this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable;
+                                IEquipable itemToDrop = (this.player as IPlayer).EquipedItems[itemToEquip.Slot];
+                                this.player.EquipItem(itemToEquip);
+                                this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = itemToDrop;
                             }
                         }
                         if (CheckKeys(Keys.H))

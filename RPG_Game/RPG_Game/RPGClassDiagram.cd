@@ -1,35 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="RPG_Game.Engine.GameMain" Collapsed="true">
-    <Position X="26" Y="0.5" Width="1.5" />
+    <Position X="10.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAMEAAgAAAAwBAAgFAAQAgAgAgAggBAQAAAAAAAAQ=</HashCode>
       <FileName>Engine\GameMain.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.GameData.StartGameEnemies" Collapsed="true">
-    <Position X="26" Y="1.5" Width="1.5" />
+    <Position X="10.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAIAAAAACgAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAABAAAoAAAEABAIAAgQACgAAAAAAAAAABAAAFAAAAI=</HashCode>
       <FileName>GameData\StartGameEnemies.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.GameData.StartGameItems" Collapsed="true">
-    <Position X="27.75" Y="1.5" Width="1.5" />
+    <Position X="12.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
       <FileName>GameData\StartGameItems.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.GameData.Textures" Collapsed="true">
-    <Position X="31.25" Y="1.5" Width="1.5" />
+    <Position X="16" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>UCEEAAQI0CBSihQgIRAgCAgSASAMEIEAADAAgyAABQI=</HashCode>
       <FileName>GameData\Textures.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Drink" Collapsed="true">
-    <Position X="8.75" Y="3.5" Width="1.5" />
+    <Position X="2.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAACIAIAAAAAAAAAAAAAAAAAgAAAIAAAAAAAA=</HashCode>
       <FileName>Models\Drink.cs</FileName>
@@ -37,7 +37,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Enemy" Collapsed="true">
-    <Position X="16" Y="3.25" Width="1.5" />
+    <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAgAAIAIAAAAAAAAAAAACAAAAAgBAAAAAQAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
@@ -45,7 +45,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameItem" Collapsed="true">
-    <Position X="7.75" Y="1.75" Width="1.5" />
+    <Position X="1.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\GameItem.cs</FileName>
@@ -53,7 +53,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameObject" Collapsed="true">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAEAAAABAAAAAgAAEAIAQAAAAEAgAAAAIAAAAAAAA=</HashCode>
       <FileName>Models\GameObject.cs</FileName>
@@ -61,7 +61,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.GameUnit" Collapsed="true">
-    <Position X="16.25" Y="1.75" Width="1.5" />
+    <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAIAAAAAAAgMEAAABAIAAAAAAAAAAIgAAAAg=</HashCode>
       <FileName>Models\GameUnit.cs</FileName>
@@ -69,14 +69,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.InfoPanel" Collapsed="true">
-    <Position X="27.75" Y="0.5" Width="1.5" />
+    <Position X="12.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAgAAAEAAAAAAAAAAAgAAABAAAAAQAAA=</HashCode>
       <FileName>Models\InfoPanel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Map" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="29.5" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQCAABQAAAgAACAAAAEAAAgAAAAIAAAAAAAAEAAA=</HashCode>
       <FileName>Models\Map.cs</FileName>
@@ -84,15 +84,15 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="RPG_Game.Models.Player" Collapsed="true">
-    <Position X="13.5" Y="3.25" Width="1.5" />
+    <Position X="4.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAEAAAYAAAAACAgAgAAAAQAAAAEACAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>BAEAAAYAAAAQCAiAgAAAAQAAAAEACAAgAEAAAABAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="RPG_Game.Models.Terrain" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="29.5" Y="1.5" Width="1.5" />
+    <Position X="14.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAQ=</HashCode>
       <FileName>Models\Terrain.cs</FileName>
@@ -100,7 +100,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="RPG_Game.Models.Tile" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="26" Y="2.5" Width="1.5" />
+    <Position X="10.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Models\Tile.cs</FileName>
@@ -108,463 +108,127 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="RPG_Game.Models.Tools" Collapsed="true">
-    <Position X="27.75" Y="2.5" Width="1.5" />
+    <Position X="12.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAIAAAAAAAAAAAAAgAAAIAAAQAAAAAAAABQAAAA=</HashCode>
+      <HashCode>AAAEAAIAAAAAAAAAAAAAkAAAIAAAQAAAAAAAABQAAAA=</HashCode>
       <FileName>Models\Tools.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RPG_Game.Models.Equip" Collapsed="true">
-    <Position X="0.5" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAQAAAAAAAEAAAAABAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAQAAAAAAAEAAAAABAAAAAAAAAAgA=</HashCode>
       <FileName>Models\Equip.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="RPG_Game.Models.DrinkableItems.HealingPotion" Collapsed="true">
-    <Position X="8.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAA=</HashCode>
-      <FileName>Models\DrinkableItems\HealingPotion.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.DrinkableItems.MajorHealingPotion" Collapsed="true">
-    <Position X="10.5" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACBAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\DrinkableItems\MajorHealingPotion.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.DrinkableItems.MinorHealingPotion" Collapsed="true">
-    <Position X="12.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\DrinkableItems\MinorHealingPotion.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Goblin" Collapsed="true">
-    <Position X="18" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAABAAAAAAEAAABAAAAAgAAAAAAAAAAgA=</HashCode>
-      <FileName>Models\Enemies\Goblin.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.GoblinBoss" Collapsed="true">
-    <Position X="20" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAAgAAQAAEAAAAgQAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\GoblinBoss.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Ogre" Collapsed="true">
-    <Position X="18" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACABAAAAAAAAAAAAAAAQAAAABAAAgAAAAAAAAAAAI=</HashCode>
-      <FileName>Models\Enemies\Ogre.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.LeatherShield" Collapsed="true">
-    <Position X="6.25" Y="13" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAACAQAEEQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\LeatherShield.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Staff" Collapsed="true">
-    <Position X="2.75" Y="11.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAgBAAAACAAAAAAAAAAAACAA=</HashCode>
-      <FileName>Models\EquipableItems\Staff.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Sword" Collapsed="true">
-    <Position X="2.75" Y="10.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\Sword.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="RPG_Game.RPGMain" Collapsed="true">
-    <Position X="31.25" Y="0.5" Width="1.5" />
+    <Position X="16" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>RPGMain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="RPG_Game.Models.Head">
-    <Position X="0.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Head.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Body">
-    <Position X="0.5" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Body.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Pant">
-    <Position X="0.5" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Pant.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Hand">
-    <Position X="0.5" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Hand.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Feet">
-    <Position X="0.5" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Feet.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Weapon">
-    <Position X="0.5" Y="11" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Weapon.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Shield">
-    <Position X="0.5" Y="12.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Shield.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.WoodenShield" Collapsed="true">
-    <Position X="4.5" Y="13" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>CAAAAACAACAAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAA=</HashCode>
-      <FileName>Models\EquipableItems\WoodenShield.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedShield" Collapsed="true">
-    <Position X="2.75" Y="13" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAgAACAAAAAAAAAAAIACAAAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedShield.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Boots" Collapsed="true">
-    <Position X="2.75" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAABAAAAAAAAAAAAABAAAEAAABAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\Boots.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.LeatherBoots" Collapsed="true">
-    <Position X="4.5" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQAQAAAEQAAAAAAAAAAAAAAAABAA=</HashCode>
-      <FileName>Models\EquipableItems\LeatherBoots.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedBoots" Collapsed="true">
-    <Position X="6.25" Y="9.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAACAAAAAAAAAAAAAECAAAAAAAAAAAIAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedBoots.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.LeatherGloves" Collapsed="true">
-    <Position X="4.5" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAgAFAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\LeatherGloves.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.RunicGloves" Collapsed="true">
-    <Position X="2.75" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAABAAAAAAAAABAAAAAAAAQAEAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\RunicGloves.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedGloves" Collapsed="true">
-    <Position X="6.25" Y="8" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAACAAAAAAAAIAAAAAAgAAAgAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedGloves.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Pants" Collapsed="true">
-    <Position X="6.25" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAAQAAAAAAAAAAAAAABEAAAACA=</HashCode>
-      <FileName>Models\EquipableItems\Pants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.LeatherPants" Collapsed="true">
-    <Position X="4.5" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAIAIAAIAIAAAAAAAIAAAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\LeatherPants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedPants" Collapsed="true">
-    <Position X="2.75" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AIEAAAAAAAAAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedPants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.LeatherArmor" Collapsed="true">
-    <Position X="6.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAQAAAAAABAAAAAABAAAEAAAAAAAAABAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\LeatherArmor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.IronArmor" Collapsed="true">
-    <Position X="2.75" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQABAAAAAAAAAAAAAAAAAAAAAEAABE=</HashCode>
-      <FileName>Models\EquipableItems\IronArmor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedArmor" Collapsed="true">
-    <Position X="4.5" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAABCAAAAAAAAAAAAAAAAAAAAAAAAACAAgAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedArmor.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Hat" Collapsed="true">
-    <Position X="2.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAoAAAAAAIAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\Hat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.Helmet" Collapsed="true">
-    <Position X="4.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AgAAAgAAAIAAAAAACAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\Helmet.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedHelmet" Collapsed="true">
-    <Position X="6.25" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABBAAAAAAABAAAAAAAAAAAEAAAQAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedHelmet.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.ShortSword" Collapsed="true">
-    <Position X="4.5" Y="10.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACIAAAAAAAAAAAAAAIAAAAAAAAAAIABAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\ShortSword.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedSword" Collapsed="true">
-    <Position X="6.25" Y="10.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAAAAAACAAAAAAAAQAACAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedSword.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.ShortStaff" Collapsed="true">
-    <Position X="4.5" Y="11.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAQACAAAAAAAAAAAAAAAEAAEAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\ShortStaff.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.EquipableItems.EnchantedStaff" Collapsed="true">
-    <Position X="6.25" Y="11.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAQAAQABAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
-      <FileName>Models\EquipableItems\EnchantedStaff.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Rat" Collapsed="true">
-    <Position X="18" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAEABAAAAAgAAAAAAAAAAgAAAAAAAAAQAA=</HashCode>
-      <FileName>Models\Enemies\Rat.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Spider" Collapsed="true">
-    <Position X="18" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ACAgAAAAACgAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\Spider.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.GoblinWarrior" Collapsed="true">
-    <Position X="20" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IBAAAAAAAAAAAAAgAAAAAIAAAAAAAAgAAAAAAEAAAAA=</HashCode>
-      <FileName>Models\Enemies\GoblinWarrior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.OgreBoss" Collapsed="true">
-    <Position X="20" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ACAAAAAAAAgAAAAAAAAAAABAAACAAAgAAAACAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\OgreBoss.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Shade" Collapsed="true">
-    <Position X="20" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAkAAAQAAAAAAAAAAAAAgAAAAAAAABAAA=</HashCode>
-      <FileName>Models\Enemies\Shade.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.GoblinWarriorBoss" Collapsed="true">
-    <Position X="22" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAABQAAAAAABAAAQAAAAAAAoAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\GoblinWarriorBoss.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Stranger" Collapsed="true">
-    <Position X="22" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAIAAAAAAIAAAAAAAAAAAEACAAgAACAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\Stranger.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.ShadeBoss" Collapsed="true">
-    <Position X="22" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAIAAAAEAAgAAAAAAAAAICAAAAAgAAAAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\ShadeBoss.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.AncientSwordsman" Collapsed="true">
-    <Position X="22" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAIAAAMAgAAQAAAAAAAAA=</HashCode>
-      <FileName>Models\Enemies\AncientSwordsman.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.Destructo" Collapsed="true">
-    <Position X="24" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAgAAAAAAgAAAAAAAAAAAEAAAAAIAgAAAAAAAgAAAA=</HashCode>
-      <FileName>Models\Enemies\Destructo.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="RPG_Game.Models.Enemies.FinalBoss" Collapsed="true">
-    <Position X="24" Y="5.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AQAAAAAAAAAAAAAIAgAAAAAAAAAAAAgAAAAAAAAgAAA=</HashCode>
-      <FileName>Models\Enemies\FinalBoss.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Interface Name="RPG_Game.Interfaces.IDrawable" Collapsed="true">
-    <Position X="7.25" Y="16" Width="1.5" />
+    <Position X="4.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDrawable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IDrinkable" Collapsed="true">
-    <Position X="5" Y="20.25" Width="1.5" />
+    <Position X="2.25" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAAAAACIAIAAAAAAAAAAAAAAAAAgAAAIAAAAAAAA=</HashCode>
       <FileName>Interfaces\IDrinkable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IEnemy" Collapsed="true">
-    <Position X="9.5" Y="20.25" Width="1.5" />
+    <Position X="6.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IEquipable" Collapsed="true">
-    <Position X="7.25" Y="20.25" Width="1.5" />
+    <Position X="4.5" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAQAAAAAAAEAAAAABAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAQAAAAAAAEAAAAABAAAAAAAAAAgA=</HashCode>
       <FileName>Interfaces\IEquipable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IGameItem" Collapsed="true">
-    <Position X="6.25" Y="18.75" Width="1.5" />
+    <Position X="3.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IGameItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IGameObject" Collapsed="true">
-    <Position X="8.5" Y="17.25" Width="1.5" />
+    <Position X="5.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAgAAEAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IGameObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IGameUnit" Collapsed="true">
-    <Position X="10.75" Y="18.75" Width="1.5" />
+    <Position X="8" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAIAAAAAAAAIEAAABAIAAAAAAAAAAIgAAAAA=</HashCode>
       <FileName>Interfaces\IGameUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IItem" Collapsed="true">
-    <Position X="14" Y="17.25" Width="1.5" />
+    <Position X="8.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IItem.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IMap" Collapsed="true">
-    <Position X="26" Y="3.75" Width="1.5" />
+    <Position X="10.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQCAAAAAAAgAACAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMap.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IObject" Collapsed="true">
-    <Position X="0.5" Y="17.25" Width="1.5" />
+    <Position X="0.5" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.IPlayer" Collapsed="true">
-    <Position X="11.75" Y="20.25" Width="1.5" />
+    <Position X="9" Y="10.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAQAAAAACAAAAAAAAAAAAAEAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.ITerrain" Collapsed="true">
-    <Position X="2.75" Y="17.25" Width="1.5" />
+    <Position X="2.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ITerrain.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="RPG_Game.Interfaces.ITile" Collapsed="true">
-    <Position X="27.75" Y="3.75" Width="1.5" />
+    <Position X="12.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Interfaces\ITile.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="RPG_Game.Enums.CardinalDirection" Collapsed="true">
-    <Position X="26" Y="4.75" Width="1.5" />
+    <Position X="10.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACCCABABAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAQ=</HashCode>
       <FileName>Enums\CardinalDirection.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="RPG_Game.Enums.Flags" Collapsed="true">
-    <Position X="27.75" Y="4.75" Width="1.5" />
+    <Position X="12.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAAAEAAAA=</HashCode>
       <FileName>Enums\Flags.cs</FileName>

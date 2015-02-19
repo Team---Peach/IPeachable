@@ -60,9 +60,42 @@
         #endregion
 
         public void EquipItem(IEquipable itemToWear)
-
         {
-            throw new NotImplementedException();
+            if (this.EquipedItems[itemToWear.Slot] == null)
+            {
+                this.equipedItems[itemToWear.Slot] = itemToWear;
+                AddStats(itemToWear);
+            }
+            else
+            {
+                RemoveStats(this.EquipedItems[itemToWear.Slot]);
+                this.equipedItems[itemToWear.Slot] = null;
+                this.equipedItems[itemToWear.Slot] = itemToWear;
+                AddStats(itemToWear);
+            }
+
+            string info = "You have equiped " + itemToWear.Name;
+            InfoPanel.AddInfo(info);
+        }
+
+        private void RemoveStats(IEquipable itemToRemove)
+        {
+            this.Health -= itemToRemove.HealthBonus;
+            this.MaxHealth -= itemToRemove.HealthBonus;
+            this.Mana -= itemToRemove.ManaBonus;
+            this.MaxMana -= itemToRemove.ManaBonus;
+            this.Attack -= itemToRemove.AttackBonus;
+            this.Defence -= itemToRemove.DefenceBonus;
+        }
+
+        private void AddStats(IEquipable itemToWear)
+        {
+            this.Health += itemToWear.HealthBonus;
+            this.MaxHealth += itemToWear.HealthBonus;
+            this.Mana += itemToWear.ManaBonus;
+            this.MaxMana += itemToWear.ManaBonus;
+            this.Attack += itemToWear.AttackBonus;
+            this.Defence += itemToWear.DefenceBonus;
         }
 
         public void UseItem(IDrinkable itemToUse)
