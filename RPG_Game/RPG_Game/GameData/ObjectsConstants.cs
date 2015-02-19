@@ -411,7 +411,8 @@ namespace RPG_Game.GameData
         public const int FinalBossMana = 0;
         public const int FinalBossAttack = 150;
         public const int FinalBossDefence = 100;
-        public static readonly List<string> FinalBossDropList = new List<string>();
+        public static readonly List<string> FinalBossDropList = new List<string> {"minorHP" };
+        
 
         #endregion
     }
