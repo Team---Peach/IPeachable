@@ -172,6 +172,7 @@
         {
             int startX = this.Position.X - this.Agression;
             int startY = this.Position.Y - this.Agression;
+
             for (int x = startX; x < (aggresion * 2) + 1; x++)
             {
                 for (int y = startY; y < (aggresion * 2) + 1; y++)
