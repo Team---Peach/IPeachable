@@ -101,12 +101,6 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
-            if (this.player.Health <= 0)
-            {
-                // TODO some end screen
-                InfoPanel.AddInfo("Game Over! You are dead");
-            }
-
             if (!waitPlayerAction)
             {
                 foreach (GameUnit unit in unitList)
@@ -119,28 +113,18 @@ namespace RPG_Game.Engine
             {
                 if (unit.Health <= 0)
                 {
-                    string item = (unit as Enemy).ItemToDrop();
-                    Tools.PlaceObjectOnMap(item, this.map, unit.Position);
-                    this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
-                    unitsToRemoveList.Add(unit);
-                    InfoPanel.AddInfo(unit.Name + " is dead!");
-                }
-            }
-
-            foreach (var unitForRemove in unitsToRemoveList)
-            {
-                unitList.Remove(unitForRemove);
-            }
-
-            
-            foreach (GameUnit unit in unitList)
-            {
-                if (unit.Health <= 0)
-                {
-                    string item = (unit as Enemy).ItemToDrop();
-                    Tools.PlaceObjectOnMap(item, this.map, unit.Position);
-                    this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
-                    unitsToRemoveList.Add(unit);
+                    if (unit is IPlayer)
+                    {
+                        InfoPanel.AddInfo("Game Over! You are dead");
+                    }
+                    else
+                    {
+                        string item = (unit as Enemy).ItemToDrop();
+                        Tools.PlaceObjectOnMap(item, this.map, unit.Position);
+                        this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
+                        unitsToRemoveList.Add(unit);
+                        InfoPanel.AddInfo(unit.Name + " is dead!");
+                    }
                 }
             }
 

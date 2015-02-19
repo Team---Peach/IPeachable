@@ -40,8 +40,8 @@ namespace RPG_Game.Models
                 .AppendFormat("Feet: {0}", player.EquipedItems["feet"] == null ? "Not Equiped" : player.EquipedItems["feet"].Name).AppendLine()
                 .AppendFormat("Weapon: {0}", player.EquipedItems["weapon"] == null ? "Not Equiped" : player.EquipedItems["weapon"].Name).AppendLine()
                 .AppendFormat("Shield: {0}", player.EquipedItems["shield"] == null ? "Not Equiped" : player.EquipedItems["shield"].Name).AppendLine().AppendLine()
-                .AppendFormat("Heal cooldown: {0} turns", 
-                (player.Turns - player.LastHeal) < 20 ? (20 - (player.Turns - player.LastHeal)).ToString() : "Ready");
+                .AppendFormat("Heal cooldown: {0}", 
+                (player.Turns - player.LastHeal) < 20 ? (20 - (player.Turns - player.LastHeal)).ToString() + " turns" : "Ready");
             
             spriteBatch.DrawString(Textures.SpriteFont, info, new Vector2(735, 15), Color.White);
 

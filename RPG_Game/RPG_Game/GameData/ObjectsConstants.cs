@@ -20,7 +20,7 @@ namespace RPG_Game.GameData
 
         // Major Healing Potion
         public const string MajorHPName = "Major Healing Potion";
-        public const int MajorHPHealthRP = 20;
+        public const int MajorHPHealthRP = 100;
         #endregion
 
         // Equip items stats
@@ -71,8 +71,8 @@ namespace RPG_Game.GameData
 
         // Enchanted Helmet
         public const string EnchantedHelmetName = "Enchanted Helmet";
-        public const int EnchantedHelmetAttackBonus = 0;
-        public const int EnchantedHelmetDefenceBonus = 30;
+        public const int EnchantedHelmetAttackBonus = 10;
+        public const int EnchantedHelmetDefenceBonus = 40;
         public const int EnchantedHelmetHealthBonus = 0;
         public const int EnchantedHelmetManaBonus = 0;
         public const string EnchantedHelmetSlot = "head";
@@ -98,8 +98,8 @@ namespace RPG_Game.GameData
 
         // Enchanted Armor
         public const string EnchantedArmorName = "Enchanted Armor";
-        public const int EnchantedArmorAttackBonus = 10;
-        public const int EnchantedArmorDefenceBonus = 40;
+        public const int EnchantedArmorAttackBonus = 20;
+        public const int EnchantedArmorDefenceBonus = 50;
         public const int EnchantedArmorHealthBonus = 0;
         public const int EnchantedArmorManaBonus = 0;
         public const string EnchantedArmorSlot = "body";
@@ -304,7 +304,7 @@ namespace RPG_Game.GameData
         public const string GoblinBossName = "Goblin Boss";
         public const int GoblinBossHealth = 150;
         public const int GoblinBossMana = 0;
-        public const int GoblinBossAttack = 20;
+        public const int GoblinBossAttack = 30;
         public const int GoblinBossDefence = 30;
         public static readonly List<string> GoblinBossDropList = new List<string>
         {
@@ -315,7 +315,7 @@ namespace RPG_Game.GameData
         public const string GoblinWarriorName = "Goblin Warrior";
         public const int GoblinWarriorHealth = 120;
         public const int GoblinWarriorMana = 0;
-        public const int GoblinWarriorAttack = 20;
+        public const int GoblinWarriorAttack = 30;
         public const int GoblinWarriorDefence = 25;
         public static readonly List<string> GoblinWarriorDropList = new List<string>
         {
@@ -329,7 +329,7 @@ namespace RPG_Game.GameData
         public const string OgreBossName = "Ogre Boss";
         public const int OgreBossHealth = 250;
         public const int OgreBossMana = 0;
-        public const int OgreBossAttack = 40;
+        public const int OgreBossAttack = 50;
         public const int OgreBossDefence = 15;
         public static readonly List<string> OgreBossDropList = new List<string>
         {
@@ -340,7 +340,7 @@ namespace RPG_Game.GameData
         public const string ShadeName = "Shade";
         public const int ShadeHealth = 150;
         public const int ShadeMana = 0;
-        public const int ShadeAttack = 30;
+        public const int ShadeAttack = 45;
         public const int ShadeDefence = 35;
         public static readonly List<string> ShadeDropList = new List<string>
         {
@@ -354,7 +354,7 @@ namespace RPG_Game.GameData
         public const string GoblinWarriorBossName = "Goblin Warrior Boss";
         public const int GoblinWarriorBossHealth = 200;
         public const int GoblinWarriorBossMana = 0;
-        public const int GoblinWarriorBossAttack = 50;
+        public const int GoblinWarriorBossAttack = 60;
         public const int GoblinWarriorBossDefence = 45;
         public static readonly List<string> GoblinWarriorBossDropList = new List<string>
         {
@@ -365,7 +365,7 @@ namespace RPG_Game.GameData
         public const string StrangerName = "Stranger";
         public const int StrangerHealth = 250;
         public const int StrangerMana = 0;
-        public const int StrangerAttack = 50;
+        public const int StrangerAttack = 80;
         public const int StrangerDefence = 55;
         public static readonly List<string> StrangerDropList = new List<string>
         {
@@ -376,7 +376,7 @@ namespace RPG_Game.GameData
         public const string ShadeBossName = "Shade Boss";
         public const int ShadeBossHealth = 300;
         public const int ShadeBossMana = 0;
-        public const int ShadeBossAttack = 60;
+        public const int ShadeBossAttack = 80;
         public const int ShadeBossDefence = 55;
         public static readonly List<string> ShadeBossDropList = new List<string>
         {
@@ -387,7 +387,7 @@ namespace RPG_Game.GameData
         public const string AncientSwordsmanName = "Ancient Swordsman";
         public const int AncientSwordsmanHealth = 400;
         public const int AncientSwordsmanMana = 0;
-        public const int AncientSwordsmanAttack = 70;
+        public const int AncientSwordsmanAttack = 90;
         public const int AncientSwordsmanDefence = 60;
         public static readonly List<string> AncientSwordsmanDropList = new List<string>
         {
@@ -398,7 +398,7 @@ namespace RPG_Game.GameData
         public const string DestructoName = "Destructo";
         public const int DestructoHealth = 500;
         public const int DestructoMana = 0;
-        public const int DestructoAttack = 85;
+        public const int DestructoAttack = 120;
         public const int DestructoDefence = 80;
         public static readonly List<string> DestructoDropList = new List<string>
         {
@@ -409,7 +409,7 @@ namespace RPG_Game.GameData
         public const string FinalBossName = "Final Boss";
         public const int FinalBossHealth = 1000;
         public const int FinalBossMana = 0;
-        public const int FinalBossAttack = 100;
+        public const int FinalBossAttack = 150;
         public const int FinalBossDefence = 100;
         public static readonly List<string> FinalBossDropList = new List<string>();
 
