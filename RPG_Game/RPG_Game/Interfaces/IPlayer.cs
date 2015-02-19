@@ -7,6 +7,8 @@
     {
         int MaxHealth { get; set; }
         int MaxMana { get; set; }
+        int Turns { get; set; }
+        int LastHeal { get; set; }
 
         IDictionary<string, IEquipable> EquipedItems { get; }
 

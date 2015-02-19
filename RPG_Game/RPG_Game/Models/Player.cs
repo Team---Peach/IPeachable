@@ -49,6 +49,7 @@
                 return new Dictionary<string, IEquipable>(equipedItems);
             }
         }
+
         public int Turns 
         {
             get { return this.turns; }
@@ -56,6 +57,15 @@
             {
                 this.turns = value;
             } 
+        }
+
+        public int LastHeal
+        {
+            get { return this.lastHeal; }
+            set
+            {
+                this.lastHeal = value; 
+            }
         }
         #endregion
 
@@ -100,8 +110,17 @@
 
         public void UseItem(IDrinkable itemToUse)
         {
-            string info = "You drinked " + itemToUse.Name + " and restore " + itemToUse.HealthRestorationPower + " health";
-            this.Health += itemToUse.HealthRestorationPower;
+            string info = "";
+            if (this.Health + itemToUse.HealthRestorationPower > this.MaxHealth)
+            {
+                info = "You drinked " + itemToUse.Name + " and restore " + (this.MaxHealth - this.Health) + " health";
+                this.Health = this.MaxHealth;
+            }
+            else
+            {
+                info = "You drinked " + itemToUse.Name + " and restore " + itemToUse.HealthRestorationPower + " health";
+                this.Health += itemToUse.HealthRestorationPower;
+            }
             InfoPanel.AddInfo(info);
         }
         public void Heal()

@@ -27,6 +27,8 @@ namespace RPG_Game.Engine
         private IMap map;
         private Texture2D console;
         private InfoPanel infoPanel;
+        private KeysPanel keysPanel;
+        private StatsPanel statsPanel;
         private static List<GameUnit> unitList;
         private static List<GameUnit> unitsToRemoveList;
         private bool waitPlayerAction = false;
@@ -65,12 +67,14 @@ namespace RPG_Game.Engine
             console = new Texture2D(GraphicsDevice, 1, 1);
 
             infoPanel = new InfoPanel(console);
+            keysPanel = new KeysPanel(console);
+            statsPanel = new StatsPanel(console);
 
             Textures.LoadTextures(Content);
 
             Point visibleTiles = new Point(
                 (SCREEN_HEIGHT - 170) / Map.TILE_SIZE,
-                (SCREEN_WIDTH - 10) / Map.TILE_SIZE);
+                (SCREEN_WIDTH - 320) / Map.TILE_SIZE);
 
             this.map = new Map(
                 Tools.GenerateMap(40, 40, Textures.MapFloor, Textures.MapWall),
@@ -264,6 +268,8 @@ namespace RPG_Game.Engine
             this.map.Draw(spriteBatch, player.Position);
 
             this.infoPanel.Draw(spriteBatch);
+            this.keysPanel.Draw(spriteBatch);
+            this.statsPanel.Draw(spriteBatch, this.player);
 
             base.Draw(gameTime);
         }

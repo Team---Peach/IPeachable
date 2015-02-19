@@ -35,7 +35,7 @@ namespace RPG_Game.Models
 
             spriteBatch.Begin();
 
-            Rectangle rectangle = new Rectangle(10, 470, 1000, 160);
+            Rectangle rectangle = new Rectangle(10, 470, 705, 160);
             spriteBatch.Draw(this.texture, rectangle, Color.White);
 
             string info = GenerateInfo();
