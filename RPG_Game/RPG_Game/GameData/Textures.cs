@@ -115,7 +115,7 @@ using Microsoft.Xna.Framework.Graphics;
             WoodenShield = content.Load<Texture2D>("Items/Equip/WoodenShield");
 
             // Font textures load
-            SpriteFont = content.Load<SpriteFont>("GameFont");
+            SpriteFont = content.Load<SpriteFont>("Fonts/GameFont");
         }
     }
 }

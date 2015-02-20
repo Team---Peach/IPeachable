@@ -220,12 +220,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RPG_GameContent\RPG_GameContent\RPG_GameContent.csproj">
-      <Project>{9016e42d-29ef-4f87-a8a8-3bc5fb8b48d5}</Project>
-      <Name>RPG_GameContent</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Content\Fonts\GameFont.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="RPGClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
