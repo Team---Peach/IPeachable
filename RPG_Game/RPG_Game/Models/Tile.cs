@@ -1,6 +1,7 @@
 ﻿namespace RPG_Game.Models
 {
     using Interfaces;
+    using Enums;
 
     public class Tile : ITile
     {
@@ -8,6 +9,14 @@
         public ITerrain Terrain { get; set; }
         public IGameItem Item { get; set; }
         public IObject GameObject { get; set; }
+
+        public bool IsTransparent
+        {
+            get { return !this.Terrain.Flags.HasFlag(Flags.IsBlocked); }
+        }
+
+        public bool IsVisible { get; set; }
+        public bool WasSeen { get; set; }
 
         public Tile(ITerrain terrain, IGameObject actor, IGameItem item, IObject gameObj)
         {

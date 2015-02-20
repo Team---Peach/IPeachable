@@ -137,21 +137,29 @@
                     Vector2 drawPosition = new Vector2(10 + TILE_SIZE * y, 10 + TILE_SIZE * x);
                     Point tile = new Point(startTile.X + x, startTile.Y + y);
 
-                    spriteBatch.Draw(this[tile].Terrain.Texture, drawPosition);
-
-                    if (this[tile].GameObject != null)
+                    if (this[tile].IsVisible)
                     {
-                        spriteBatch.Draw(this[tile].GameObject.Texture, drawPosition);
+                        spriteBatch.Draw(this[tile].Terrain.Texture, drawPosition);
+                        this[tile].WasSeen = true;
+
+                        if (this[tile].GameObject != null)
+                        {
+                            spriteBatch.Draw(this[tile].GameObject.Texture, drawPosition);
+                        }
+
+                        if (this[tile].Item != null)
+                        {
+                            spriteBatch.Draw(this[tile].Item.Texture, drawPosition);
+                        }
+
+                        if (this[tile].Actor != null)
+                        {
+                            spriteBatch.Draw(this[tile].Actor.Texture, drawPosition);
+                        }
                     }
-
-                    if (this[tile].Item != null)
+                    else if (this[tile].WasSeen)
                     {
-                        spriteBatch.Draw(this[tile].Item.Texture, drawPosition);
-                    }
-
-                    if (this[tile].Actor != null)
-                    {
-                        spriteBatch.Draw(this[tile].Actor.Texture, drawPosition);
+                        spriteBatch.Draw(this[tile].Terrain.Texture, drawPosition, Color.DarkGray);
                     }
                 }
             }

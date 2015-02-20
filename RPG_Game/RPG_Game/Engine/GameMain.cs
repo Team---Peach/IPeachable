@@ -10,6 +10,7 @@ using RPG_Game.Interfaces;
 using RPG_Game.Models;
 using RPG_Game.Enums;
 using RPG_Game.GameData;
+using RPG_Game.Engine.FieldOfView;
 #endregion
 
 namespace RPG_Game.Engine
@@ -29,6 +30,7 @@ namespace RPG_Game.Engine
         private InfoPanel infoPanel;
         private KeysPanel keysPanel;
         private StatsPanel statsPanel;
+        private FieldOfView<ITile> fieldOfView;
         private static List<GameUnit> unitList;
         private static List<GameUnit> unitsToRemoveList;
         private bool waitPlayerAction = false;
@@ -79,6 +81,8 @@ namespace RPG_Game.Engine
             this.map = new Map(
                 Tools.GenerateMap(40, 40, Textures.MapFloor, Textures.MapWall),
                 visibleTiles);
+
+            this.fieldOfView = new FieldOfView<ITile>(this.map.Tiles);
 
             // Creates a new unit with flag IsPlayerControl, and spawns it at map/point.
             this.player = new Player(Textures.Player, this.map, Point.Zero);
@@ -252,7 +256,9 @@ namespace RPG_Game.Engine
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
+
+            fieldOfView.ComputeFov(player.Position.X, player.Position.Y, 5, true, FOVMethod.MRPAS, RangeLimitShape.Circle);
 
             this.map.Draw(spriteBatch, player.Position);
 

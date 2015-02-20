@@ -36,6 +36,11 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Engine\FieldOfView\ArrayExtensions.cs" />
+    <Compile Include="Engine\FieldOfView\FieldOfView.cs" />
+    <Compile Include="Engine\FieldOfView\FOVAlgorithm.cs" />
+    <Compile Include="Engine\FieldOfView\MRPAS.cs" />
+    <Compile Include="Engine\FieldOfView\ShadowCasting.cs" />
     <Compile Include="GameData\ObjectsConstants.cs" />
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
