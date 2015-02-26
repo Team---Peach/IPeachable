@@ -29,7 +29,8 @@ namespace RPG_Game.Models
             StringBuilder info = new StringBuilder();
             info.AppendLine("Move - 'KeyPad'")
                 .AppendLine("PickUp - 'Space'")
-                .AppendLine("Heal - 'H'");
+                .AppendLine("Heal - 'H'")
+                .AppendLine("Shield - 'D'");
             
             spriteBatch.DrawString(Textures.SpriteFont, info, new Vector2(735, 475), Color.White);
 
