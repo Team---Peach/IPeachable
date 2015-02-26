@@ -112,6 +112,9 @@
     <Content Include="Content\Enemies\Stranger.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\GameOver.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Items\Equip\Boots.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

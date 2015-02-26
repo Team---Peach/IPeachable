@@ -21,6 +21,11 @@ namespace RPG_Game.Engine
             SCREEN_WIDTH = 1024,
             SCREEN_HEIGHT = 640,
             MIN_TURN_COST = 100;
+        private int blinkCount = 0;
+
+        private bool
+            waitPlayerAction = false,
+            gameOver = false;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -33,7 +38,6 @@ namespace RPG_Game.Engine
         private FieldOfView<ITile> fieldOfView;
         private static List<GameUnit> unitList;
         private static List<GameUnit> unitsToRemoveList;
-        private bool waitPlayerAction = false;
 
         // The previous (old) and the current (new)
         // keyboard states to check for key presses
@@ -105,170 +109,173 @@ namespace RPG_Game.Engine
                 Exit();
             }
 
-            if (!waitPlayerAction)
+            if (!this.gameOver)
             {
+                if (!waitPlayerAction)
+                {
+                    foreach (GameUnit unit in unitList)
+                    {
+                        unit.Energy += unit.Speed;
+                    }
+                }
+
                 foreach (GameUnit unit in unitList)
                 {
-                    unit.Energy += unit.Speed;
-                }
-            }
-			
-            foreach (GameUnit unit in unitList)
-            {
-                if (unit is Enemy)
-                {
-                    (unit as Enemy).StartBattleIfInRange(this.map);
-                }
-                if (unit.Health <= 0)
-                {
-                    if (unit is IPlayer)
+                    if (unit is Enemy)
                     {
-                        // TODO some end screen
-                        InfoPanel.AddInfo("Game Over! You are dead");
+                        (unit as Enemy).StartBattleIfInRange(this.map);
                     }
-                    else
+                    if (unit.Health <= 0)
                     {
-                        string item = (unit as Enemy).ItemToDrop();
-                        Tools.PlaceObjectOnMap(item, this.map, unit.Position);
-                        this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
-                        unitsToRemoveList.Add(unit);
-                        InfoPanel.AddInfo(unit.Name + " is dead!");
+                        if (unit is IPlayer)
+                        {
+                            this.gameOver = true;
+                            InfoPanel.AddInfo("Game Over! You are dead");
+                        }
+                        else
+                        {
+                            string item = (unit as Enemy).ItemToDrop();
+                            Tools.PlaceObjectOnMap(item, this.map, unit.Position);
+                            this.map.Tiles[unit.Position.X, unit.Position.Y].Actor = null;
+                            unitsToRemoveList.Add(unit);
+                            InfoPanel.AddInfo(unit.Name + " is dead!");
+                        }
                     }
                 }
-            }
 
-            foreach (var unitForRemove in unitsToRemoveList)
-            {
-                unitList.Remove(unitForRemove);
-            }
-
-            // Sort units in list by their energy.
-            unitList.Sort((x, y) => x.Energy.CompareTo(y.Energy));
-
-            foreach (GameUnit unit in unitList)
-            {
-                //unit.Energy += unit.Speed;
-                if (unit.Energy >= MIN_TURN_COST)
+                foreach (var unitForRemove in unitsToRemoveList)
                 {
-                    if (unit is IPlayer)
+                    unitList.Remove(unitForRemove);
+                }
+
+                // Sort units in list by their energy.
+                unitList.Sort((x, y) => x.Energy.CompareTo(y.Energy));
+
+                foreach (GameUnit unit in unitList)
+                {
+                    //unit.Energy += unit.Speed;
+                    if (unit.Energy >= MIN_TURN_COST)
                     {
-                        waitPlayerAction = true;
-
-                        #region Keys Check
-                        // Horizonta/Vertical movement
-                        if (CheckKeys(Keys.Down, Keys.NumPad2))
+                        if (unit is IPlayer)
                         {
-                            this.player.Move(CardinalDirection.South);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
+                            waitPlayerAction = true;
 
-                        if (CheckKeys(Keys.Up, Keys.NumPad8))
-                        {
-                            this.player.Move(CardinalDirection.North);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        if (CheckKeys(Keys.Left, Keys.NumPad4))
-                        {
-                            this.player.Move(CardinalDirection.West);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        if (CheckKeys(Keys.Right, Keys.NumPad6))
-                        {
-                            this.player.Move(CardinalDirection.East);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        //Diagonal movement
-                        if (CheckKeys(Keys.NumPad7))
-                        {
-                            this.player.Move(CardinalDirection.NorthWest);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        if (CheckKeys(Keys.NumPad9))
-                        {
-                            this.player.Move(CardinalDirection.NorthEast);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        if (CheckKeys(Keys.NumPad1))
-                        {
-                            this.player.Move(CardinalDirection.SouthWest);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        if (CheckKeys(Keys.NumPad3))
-                        {
-                            this.player.Move(CardinalDirection.SouthEast);
-                            this.player.Energy -= 100;
-                            this.player.UpdateMana();
-                            this.player.DeactivateShield();
-                            waitPlayerAction = false;
-                        }
-
-                        // Space -> Use/Equip
-                        if (CheckKeys(Keys.Space))
-                        {
-                            if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Drink)
+                            #region Keys Check
+                            // Horizonta/Vertical movement
+                            if (CheckKeys(Keys.Down, Keys.NumPad2))
                             {
-                                this.player.UseItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IDrinkable);
-                                this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = null;
+                                this.player.Move(CardinalDirection.South);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
                             }
-                            if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Equip)
-                            {
-                                IEquipable itemToEquip =
-                                    this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable;
-                                IEquipable itemToDrop = (this.player as IPlayer).EquipedItems[itemToEquip.Slot];
-                                this.player.EquipItem(itemToEquip);
-                                this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = itemToDrop;
-                            }
-                        }
-                        if (CheckKeys(Keys.H))
-                        {
-                            (this.player as Player).Heal();
-                        }
 
-                        if (CheckKeys(Keys.D))
-                        {
-                            (this.player as Player).Shield();
+                            if (CheckKeys(Keys.Up, Keys.NumPad8))
+                            {
+                                this.player.Move(CardinalDirection.North);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            if (CheckKeys(Keys.Left, Keys.NumPad4))
+                            {
+                                this.player.Move(CardinalDirection.West);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            if (CheckKeys(Keys.Right, Keys.NumPad6))
+                            {
+                                this.player.Move(CardinalDirection.East);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            //Diagonal movement
+                            if (CheckKeys(Keys.NumPad7))
+                            {
+                                this.player.Move(CardinalDirection.NorthWest);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            if (CheckKeys(Keys.NumPad9))
+                            {
+                                this.player.Move(CardinalDirection.NorthEast);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            if (CheckKeys(Keys.NumPad1))
+                            {
+                                this.player.Move(CardinalDirection.SouthWest);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            if (CheckKeys(Keys.NumPad3))
+                            {
+                                this.player.Move(CardinalDirection.SouthEast);
+                                this.player.Energy -= 100;
+                                this.player.UpdateMana();
+                                this.player.DeactivateShield();
+                                waitPlayerAction = false;
+                            }
+
+                            // Space -> Use/Equip
+                            if (CheckKeys(Keys.Space))
+                            {
+                                if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Drink)
+                                {
+                                    this.player.UseItem(this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IDrinkable);
+                                    this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = null;
+                                }
+                                if (this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item is Equip)
+                                {
+                                    IEquipable itemToEquip =
+                                        this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item as IEquipable;
+                                    IEquipable itemToDrop = (this.player as IPlayer).EquipedItems[itemToEquip.Slot];
+                                    this.player.EquipItem(itemToEquip);
+                                    this.map.Tiles[this.player.Position.X, this.player.Position.Y].Item = itemToDrop;
+                                }
+                            }
+                            if (CheckKeys(Keys.H))
+                            {
+                                (this.player as Player).Heal();
+                            }
+
+                            if (CheckKeys(Keys.D))
+                            {
+                                (this.player as Player).Shield();
+                            }
+                            #endregion
                         }
-                        #endregion
-                    }
-                    else
-                    {
-                        //AI
-                        if (!waitPlayerAction)
+                        else
                         {
-                            unit.Move(Tools.RandomDirection());
-                            unit.Energy -= 100;
+                            //AI
+                            if (!waitPlayerAction)
+                            {
+                                unit.Move(Tools.RandomDirection());
+                                unit.Energy -= 100;
+                            }
                         }
                     }
                 }
             }
-            
+
             // Set the old keyboard state
             this.oldKBState = this.newKBState;
 
@@ -286,6 +293,13 @@ namespace RPG_Game.Engine
             this.infoPanel.Draw(spriteBatch);
             this.keysPanel.Draw(spriteBatch);
             this.statsPanel.Draw(spriteBatch, this.player);
+
+            if (this.gameOver)
+            {
+                this.spriteBatch.Begin();
+                this.spriteBatch.Draw(GameData.Textures.GameOver, new Vector2(60, 20));
+                this.spriteBatch.End();
+            }
 
             base.Draw(gameTime);
         }

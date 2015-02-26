@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
         public static Texture2D MapFloor { get; set; }
         public static Texture2D MapWall { get; set; }
         public static Texture2D Player { get; set; }
+        public static Texture2D GameOver { get; set; }
 
         // Enemy textures
         public static Texture2D Goblin { get; set; }
@@ -66,6 +67,7 @@ using Microsoft.Xna.Framework.Graphics;
             MapFloor = content.Load<Texture2D>("Floor");
             MapWall = content.Load<Texture2D>("Wall");
             Player = content.Load<Texture2D>("Player");
+            GameOver = content.Load<Texture2D>("GameOver");
 
             // Enemy textures load
             Goblin = content.Load<Texture2D>("Enemies/Goblin");
