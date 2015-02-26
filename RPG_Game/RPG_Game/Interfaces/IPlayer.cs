@@ -14,5 +14,6 @@
 
         void EquipItem(IEquipable itemToWear);
         void UseItem(IDrinkable itemToUse);
+        void Heal();
     }
 }

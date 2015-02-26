@@ -1,13 +1,9 @@
 ﻿namespace RPG_Game.Models
 {
-    using System;
     using System.Collections.Generic;
     using Microsoft.Xna.Framework.Graphics;
     using Microsoft.Xna.Framework;
-    using RPG_Game.Interfaces;
-    using RPG_Game.Enums;
-    using System.Diagnostics;
-    using System.Threading;
+    using Interfaces;
 
     public class Player : GameUnit, IPlayer
     {
@@ -35,6 +31,7 @@
         {
             this.MaxHealth = PlayerHealth;
             this.MaxMana = PlayerMana;
+
         }
 
         #region Properties
@@ -123,13 +120,14 @@
             }
             InfoPanel.AddInfo(info);
         }
+
         public void Heal()
         {
             
-            if (this.Turns - this.lastHeal > 20 && this.Mana >= 300)
+            if (this.Turns - this.lastHeal > 20 && this.Mana >= 100)
             {
                 this.Health += 50;
-                this.Mana -= 300;
+                this.Mana -= 100;
                 this.lastHeal = this.Turns;
                 string info = "You healed yourself for 50 Health";
                 InfoPanel.AddInfo(info);

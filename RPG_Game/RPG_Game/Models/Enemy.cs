@@ -2,9 +2,8 @@
 {
     using Microsoft.Xna.Framework;
     using Microsoft.Xna.Framework.Graphics;
-    using RPG_Game.Enums;
-    using RPG_Game.Interfaces;
-    using System;
+    using Enums;
+    using Interfaces;
     using System.Collections.Generic;
 
     public class Enemy : GameUnit, IEnemy
@@ -22,6 +21,7 @@
             this.Agression = aggresion;
         }
 
+        #region Properties
         public List<string> DropList
         {
             get
@@ -56,6 +56,7 @@
                 this.aggresion = value;
             }
         }
+        #endregion
 
         /// <summary>
         /// Random pick from droplist and returns the name of the item that will be droped

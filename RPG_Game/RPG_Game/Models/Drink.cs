@@ -20,6 +20,7 @@
             this.DefenceIncreasePower = defenceIncreasePower;
         }
 
+        #region Properties
         public int HealthRestorationPower { get; set; }
 
         public int ManaRestorationPower { get; set; }
@@ -31,5 +32,6 @@
         public int AttackIncreasePower { get; set; }
 
         public int DefenceIncreasePower { get; set; }
+        #endregion
     }
 }

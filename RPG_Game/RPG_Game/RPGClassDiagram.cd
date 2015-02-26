@@ -3,7 +3,7 @@
   <Class Name="RPG_Game.Engine.GameMain" Collapsed="true">
     <Position X="10.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAMEAAgAAAAwBAAgFAAQAgAgAgAggBAQAAAAAAAAQ=</HashCode>
+      <HashCode>AAQAMEAAgAAAAyBAEgFAAQAgAgAgAggBAQAAAgAAAAQ=</HashCode>
       <FileName>Engine\GameMain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -39,7 +39,7 @@
   <Class Name="RPG_Game.Models.Enemy" Collapsed="true">
     <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAIAIAAAAAAAAAAAACAAAAAgBAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAIAIAIAAAAAAQAAACAIAAAgBAAAAAQAAAAA=</HashCode>
       <FileName>Models\Enemy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -86,7 +86,7 @@
   <Class Name="RPG_Game.Models.Player" Collapsed="true">
     <Position X="4.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAEAAAYAAAAQCAiAgAAAAQAAAAEACAAgAEAAAABAAAA=</HashCode>
+      <HashCode>BgEAABYAAAAQCAiAgAAAAQAAEAEACAAgAEAAAABAAAA=</HashCode>
       <FileName>Models\Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -102,7 +102,7 @@
   <Class Name="RPG_Game.Models.Tile" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAkAAAAAgAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Models\Tile.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -146,7 +146,7 @@
   <Interface Name="RPG_Game.Interfaces.IEnemy" Collapsed="true">
     <Position X="6.75" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAQAAACAAAAAAAAAAAAQAAAAA=</HashCode>
       <FileName>Interfaces\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -178,13 +178,6 @@
       <FileName>Interfaces\IGameUnit.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="RPG_Game.Interfaces.IItem" Collapsed="true">
-    <Position X="8.75" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IItem.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="RPG_Game.Interfaces.IMap" Collapsed="true">
     <Position X="10.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
@@ -192,17 +185,10 @@
       <FileName>Interfaces\IMap.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="RPG_Game.Interfaces.IObject" Collapsed="true">
-    <Position X="0.5" Y="7.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IObject.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="RPG_Game.Interfaces.IPlayer" Collapsed="true">
     <Position X="9" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAQAAAAACAAAAAAAAAAAAAEAAAAgAAAAAAAAAAA=</HashCode>
+      <HashCode>BAAAABQAAAAACACAAAAAAAAAAAEAAAAgAEAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IPlayer.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -216,8 +202,15 @@
   <Interface Name="RPG_Game.Interfaces.ITile" Collapsed="true">
     <Position X="12.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAgAAAAAAAAAAEAAAAAAAAAEAAAAIAAAA=</HashCode>
       <FileName>Interfaces\ITile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RPG_Game.Interfaces.IObject">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IObject.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="RPG_Game.Enums.CardinalDirection" Collapsed="true">

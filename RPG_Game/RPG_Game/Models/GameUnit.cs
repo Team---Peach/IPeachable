@@ -22,6 +22,7 @@
             this.Speed = 10;
         }
 
+        #region Properties
         public int Health
         {
             get { return this.health; }
@@ -47,6 +48,8 @@
         public int Energy { get; set; }
 
         public int Speed { get; set; }
+
+        #endregion
 
         public virtual void Move(CardinalDirection dir)
         {

@@ -19,6 +19,7 @@
             this.Slot = slot;
         }
 
+        #region Properties
         public int AttackBonus { get; set; }
 
         public int DefenceBonus { get; set; }
@@ -28,5 +29,6 @@
         public int ManaBonus { get; set; }
 
         public string Slot { get; set; }
+        #endregion
     }
 }

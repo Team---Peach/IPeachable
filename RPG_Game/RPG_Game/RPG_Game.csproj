@@ -45,6 +45,7 @@
     <Compile Include="GameData\StartGameEnemies.cs" />
     <Compile Include="GameData\StartGameItems.cs" />
     <Compile Include="GameData\Textures.cs" />
+    <Compile Include="Interfaces\IObject.cs" />
     <Compile Include="Models\Drink.cs" />
     <Compile Include="Models\Enemy.cs" />
     <Compile Include="Enums\CardinalDirection.cs" />
@@ -59,9 +60,7 @@
     <Compile Include="Interfaces\IGameObject.cs" />
     <Compile Include="Interfaces\IGameUnit.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
-    <Compile Include="Interfaces\IItem.cs" />
     <Compile Include="Interfaces\IMap.cs" />
-    <Compile Include="Interfaces\IObject.cs" />
     <Compile Include="Interfaces\ITerrain.cs" />
     <Compile Include="Interfaces\ITile.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
