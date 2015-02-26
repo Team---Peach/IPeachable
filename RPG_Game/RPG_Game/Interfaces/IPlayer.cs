@@ -9,6 +9,7 @@
         int MaxMana { get; set; }
         int Turns { get; set; }
         int LastHeal { get; set; }
+        int LastShield { get; }
 
         IDictionary<string, IEquipable> EquipedItems { get; }
 
@@ -16,5 +17,7 @@
         void UseItem(IDrinkable itemToUse);
         void Heal();
         void UpdateMana();
+        void Shield();
+        void DeactivateShield();
     }
 }

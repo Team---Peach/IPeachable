@@ -14,6 +14,9 @@
         private const int PlayerDefence = 50;
         private int turns = 0;
         private int lastHeal = 0;
+        private int lastDevineShield = 0;
+        private int defaultDefence;
+        private bool isShieldActive = false;
 
         private IDictionary<string, IEquipable> equipedItems = new Dictionary<string, IEquipable>
         {
@@ -45,6 +48,11 @@
             {
                 return new Dictionary<string, IEquipable>(equipedItems);
             }
+        }
+
+        public int LastShield
+        {
+            get { return this.lastDevineShield; }
         }
 
         public int Turns 
@@ -126,15 +134,25 @@
             
             if (this.Turns - this.lastHeal > 20 && this.Mana >= 100)
             {
-                this.Health += 50;
+                int healedAmount;
+                if (this.MaxHealth - this.Health < 50)
+                {
+                    healedAmount = this.MaxHealth - this.Health;
+                    this.Health = this.MaxHealth;
+                }
+                else
+                {
+                    this.Health += 50;
+                    healedAmount = 50;
+                }
                 this.Mana -= 100;
                 this.lastHeal = this.Turns;
-                string info = "You healed yourself for 50 Health";
+                string info = string.Format("You healed yourself for {0} Health", healedAmount);
                 InfoPanel.AddInfo(info);
             }
             else if (this.Turns - this.lastHeal < 20)
             {
-                string info = string.Format("Heal is on cooldown wait {0} more turns", 20 - (this.Turns - this.lastHeal));
+                string info = string.Format("Heal is on cooldown wait {0} more turns.", 20 - (this.Turns - this.lastHeal));
                 InfoPanel.AddInfo(info);
             }
             else
@@ -149,6 +167,39 @@
             if (this.Mana < 500)
             {
                 this.Mana++;
+            }
+        }
+
+        public void Shield()
+        {
+            if (this.Turns - this.lastDevineShield < 50)
+            {
+                string info = string.Format("Devine Shield is on cooldown wait {0} more turns."
+                    , 50 - (this.Turns - this.lastDevineShield));
+                InfoPanel.AddInfo(info);
+            }
+            else
+            {
+                this.defaultDefence = this.Defence;
+                this.isShieldActive = true;
+                this.Defence += 500;
+                this.Mana = 0;
+                this.lastDevineShield = this.Turns;
+                string info = string.Format("Devine Shield has been used!"
+                    , 50 - (this.Turns - this.lastHeal));
+                InfoPanel.AddInfo(info);
+            }
+        }
+
+        public void DeactivateShield()
+        {
+            if (this.isShieldActive && lastDevineShield + 5 == this.Turns)
+            {
+                isShieldActive = false;
+                this.Defence = defaultDefence;
+                string info = string.Format("Devine Shield is over!"
+                    , 150 - (this.Turns - this.lastHeal));
+                InfoPanel.AddInfo(info);
             }
         }
     }

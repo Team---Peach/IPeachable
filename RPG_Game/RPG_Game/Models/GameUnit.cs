@@ -4,6 +4,7 @@
     using Microsoft.Xna.Framework.Graphics;
     using Enums;
     using Interfaces;
+    using System;
 
     public abstract class GameUnit : GameObject, IGameUnit
     {
@@ -116,7 +117,11 @@
 
         public void Hit(IGameUnit target)
         {
-            int damage = this.Attack - (this.Attack/target.Defence);
+            int damage = this.Attack - (this.Attack * target.Defence)/700;
+            if (damage < 0)
+            {
+                damage = 0;
+            }
             target.Health -= damage;
             string info = GenerateInfoText(damage, target);
             InfoPanel.AddInfo(info);

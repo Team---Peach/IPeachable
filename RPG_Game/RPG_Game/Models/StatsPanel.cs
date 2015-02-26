@@ -41,7 +41,9 @@ namespace RPG_Game.Models
                 .AppendFormat("Weapon: {0}", player.EquipedItems["weapon"] == null ? "Not Equiped" : player.EquipedItems["weapon"].Name).AppendLine()
                 .AppendFormat("Shield: {0}", player.EquipedItems["shield"] == null ? "Not Equiped" : player.EquipedItems["shield"].Name).AppendLine().AppendLine()
                 .AppendFormat("Heal cooldown: {0}", 
-                (player.Turns - player.LastHeal) < 20 ? (20 - (player.Turns - player.LastHeal)).ToString() + " turns" : "Ready");
+                (player.Turns - player.LastHeal) < 20 ? (20 - (player.Turns - player.LastHeal)).ToString() + " turns" : "Ready").AppendLine()
+                .AppendFormat("Devine cooldown: {0}", 
+                (player.Turns - player.LastShield) < 50 ? (50 - (player.Turns - player.LastShield)).ToString() + " turns" : "Ready");
             
             spriteBatch.DrawString(Textures.SpriteFont, info, new Vector2(735, 15), Color.White);
 
