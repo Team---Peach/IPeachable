@@ -143,5 +143,13 @@
                 InfoPanel.AddInfo(info);
             }
         }
+
+        public void UpdateMana()
+        {
+            if (this.Mana < 500)
+            {
+                this.Mana++;
+            }
+        }
     }
 }

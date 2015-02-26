@@ -160,6 +160,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.South);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -167,6 +168,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.North);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -174,6 +176,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.West);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -181,6 +184,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.East);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -189,6 +193,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.NorthWest);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -196,6 +201,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.NorthEast);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -203,6 +209,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.SouthWest);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
@@ -210,6 +217,7 @@ namespace RPG_Game.Engine
                         {
                             this.player.Move(CardinalDirection.SouthEast);
                             this.player.Energy -= 100;
+                            this.player.UpdateMana();
                             waitPlayerAction = false;
                         }
 
